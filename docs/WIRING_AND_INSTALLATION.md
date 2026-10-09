@@ -66,6 +66,28 @@ The firmware never drives either selector HIGH. A swapped pair produces the
 classic symptom where saved NV state looks correct but physical addresses 9
 and 10 are reversed.
 
+### IEC selector installation: test first, modify later
+
+Do not begin by cutting traces on a working 1541. Early validation should use
+insulated IC test clips on **UC1 pins 15 and 16** and a temporary ground/test
+lead arrangement. Confirm that 1541HUD can select IEC 8, 9, 10, and 11 and
+that the physical address agrees with the saved value before soldering any
+permanent wiring.
+
+For a reversible installation, use a suitable socket/interposer between UC1
+and its permanent PCB socket that isolates the two selector pins (15 and 16)
+from the board-side default straps, then route those isolated pins to SEL_A and
+SEL_B. This allows the original 1541 to be restored without cutting PCB traces.
+Do not alter unrelated UC1 pins; the rest of that 6522 is not decoration.
+
+For a permanent installation, the board's IEC-address straps **J1/J2** may be
+opened/cut only after the test-clip mapping has been confirmed. Opening both
+straps without the OneROM selector wires connected leaves the selector inputs
+released, so the drive will appear as IEC device **11**. That condition is
+expected from the pull-up logic; it is not a firmware failure. Keep a clear
+record of the original strap state and test the OneROM wiring before declaring
+the conversion complete.
+
 ## X1 socket-routing table
 
 X1 extends chip select to the second 8 KiB ROM half. It always lands on pin 20
