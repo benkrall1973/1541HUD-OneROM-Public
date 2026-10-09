@@ -27,3 +27,6 @@ validated, do not treat any artifact in this repository as flash-ready.
 - `firmware-monitor/` contains the complete UB4 V0.8.0.15 passive Monitor
   image and its checksum. It is upper-socket-only and must be paired with a
   compatible UB3 Control installation.
+- `firmware-control/` contains the UB3 custom-composition kit: patched V8
+  base, compiled plugins, bootloader, verified CLI, and no-JiffyDOS example
+  manifests.
