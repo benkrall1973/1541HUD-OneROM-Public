@@ -31,9 +31,10 @@ validated, do not treat any artifact in this repository as flash-ready.
    opening the drive or connecting USB.
 2. Confirm compatibility and ROM licensing in
    [Compatibility, Limitations, and ROM Licensing](docs/COMPATIBILITY_AND_LIMITATIONS.md).
-3. Verify the exact artifact using [SHA256SUMS.txt](SHA256SUMS.txt).
-4. Follow [flashing and recovery](docs/FLASHING.md) one board at a time.
-5. Install 1541HUD and/or the C64 configurator after firmware validation.
+3. Read the [hardware and use disclaimer](DISCLAIMER.md).
+4. Verify the exact artifact using [SHA256SUMS.txt](SHA256SUMS.txt).
+5. Follow [flashing and recovery](docs/FLASHING.md) one board at a time.
+6. Install 1541HUD and/or the C64 configurator after firmware validation.
 
 ## Components
 
@@ -50,3 +51,6 @@ validated, do not treat any artifact in this repository as flash-ready.
 
 The full artifact inventory, exact target roles, and qualification status are
 in [RELEASE_MANIFEST.md](RELEASE_MANIFEST.md).
+
+Original project material is released under the [MIT License](LICENSE).
+Release-package changes are tracked in [CHANGELOG.md](CHANGELOG.md).
