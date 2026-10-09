@@ -21,3 +21,9 @@ documentation, not the private development tree.
 
 The first public release is being assembled. Until a release is marked
 validated, do not treat any artifact in this repository as flash-ready.
+
+## Current staging artifacts
+
+- `firmware-monitor/` contains the complete UB4 V0.8.0.15 passive Monitor
+  image and its checksum. It is upper-socket-only and must be paired with a
+  compatible UB3 Control installation.
