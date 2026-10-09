@@ -1,8 +1,11 @@
 # 1541HUD OneROM — Public Releases
 
-This repository is the public distribution point for validated 1541HUD OneROM
-releases. It intentionally contains release-ready user artifacts and concise
-documentation, not the private development tree.
+This repository is the public distribution point for 1541HUD OneROM releases.
+It intentionally contains distributable artifacts and user documentation, not
+the private development tree. Each artifact has a stated qualification level;
+do not treat every file as universally hardware-validated merely because it is
+in a repository. That would be a spectacularly efficient way to confuse a
+checksum with an engineering result.
 
 ## What belongs here
 
@@ -22,7 +25,17 @@ documentation, not the private development tree.
 The first public release is being assembled. Until a release is marked
 validated, do not treat any artifact in this repository as flash-ready.
 
-## Current staging artifacts
+## Start here
+
+1. Read [wiring and installation](docs/WIRING_AND_INSTALLATION.md) before
+   opening the drive or connecting USB.
+2. Confirm compatibility and ROM licensing in
+   [Compatibility, Limitations, and ROM Licensing](docs/COMPATIBILITY_AND_LIMITATIONS.md).
+3. Verify the exact artifact using [SHA256SUMS.txt](SHA256SUMS.txt).
+4. Follow [flashing and recovery](docs/FLASHING.md) one board at a time.
+5. Install 1541HUD and/or the C64 configurator after firmware validation.
+
+## Components
 
 - `firmware-monitor/` contains the complete UB4 V0.8.0.15 passive Monitor
   image and its checksum. It is upper-socket-only and must be paired with a
@@ -34,3 +47,6 @@ validated, do not treat any artifact in this repository as flash-ready.
   release files.
 - `1541hud/` contains the portable Windows V0.8.0.12 application and its
   checksum.
+
+The full artifact inventory, exact target roles, and qualification status are
+in [RELEASE_MANIFEST.md](RELEASE_MANIFEST.md).

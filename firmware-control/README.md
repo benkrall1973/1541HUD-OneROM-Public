@@ -49,3 +49,7 @@ out of version control.
 Verify every distributed input against [SHA256SUMS.txt](SHA256SUMS.txt) before
 composition. The final composed image is custom-user output and must be tested
 before flashing hardware.
+
+For the prebuilt Original-ROM-only candidate and the BOOTSEL flashing flow, see
+[`../docs/FLASHING.md`](../docs/FLASHING.md). Hardware and USB sequencing are
+defined in [`../docs/WIRING_AND_INSTALLATION.md`](../docs/WIRING_AND_INSTALLATION.md).

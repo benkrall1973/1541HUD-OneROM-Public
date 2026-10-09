@@ -19,6 +19,10 @@ composition JSON to flash it.
 
 Verify the file against [SHA256SUMS.txt](SHA256SUMS.txt) before flashing.
 
+Flashing and post-flash checks are documented in
+[`../docs/FLASHING.md`](../docs/FLASHING.md). Socket placement and USB-power
+rules are in [`../docs/WIRING_AND_INSTALLATION.md`](../docs/WIRING_AND_INSTALLATION.md).
+
 ## Release status
 
 This is the hardware-tested V0.8.0.15 Monitor assembly carried from the

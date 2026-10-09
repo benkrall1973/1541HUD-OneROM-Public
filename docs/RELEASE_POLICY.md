@@ -1,6 +1,7 @@
 # Public release policy
 
-Only hardware-validated, checksum-recorded artifacts are published here.
+Published artifacts must be checksum-recorded and must state their qualification
+level: hardware-tested, composition-inspected candidate, or example input.
 
 Each release must document the target board/socket, exact firmware filename,
 SHA-256 checksum, flashing method, required host application version, and
