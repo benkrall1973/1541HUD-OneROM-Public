@@ -30,3 +30,7 @@ validated, do not treat any artifact in this repository as flash-ready.
 - `firmware-control/` contains the UB3 custom-composition kit: patched V8
   base, compiled plugins, bootloader, verified CLI, and no-JiffyDOS example
   manifests.
+- `c64-onerom-configurator/` contains the V0.8.0.01 C64 `.PRG` and `.d64`
+  release files.
+- `1541hud/` contains the portable Windows V0.8.0.12 application and its
+  checksum.
