@@ -28,6 +28,10 @@ Open PowerShell in this directory and run:
   --force
 ```
 
+The supplied example manifests intentionally use paths relative to the
+**repository root**, because OneROM CLI resolves manifest file paths from the
+current working directory.
+
 Create the `output` directory before running the command if the CLI does not
 create it on the installed version.
 

@@ -5,9 +5,9 @@
   "description": "UB3 Control composition example for a OneROM installed in the lower C000 socket.",
   "categories": ["drive", "firmware", "commodore", "iec"],
   "rom_sets": [
-    {"type":"single","roms":[{"description":"1541HUD USB V0.8.0.15 system plugin","file":"../plugins/1541-OneROM-1541HUD-USB-v0.8.0.15.bin","type":"system_plugin"}]},
-    {"type":"single","roms":[{"description":"1541HUD Host-Control V0.8.0.15 user plugin","file":"../plugins/1541-OneROM-1541HUD-Host-Control-v0.8.0.15.bin","type":"user_plugin"}]},
-    {"type":"multi","roms":[{"description":"Lower C000 ROM","file":"https://www.zimmers.net/anonftp/pub/cbm/firmware/drives/new/1541/1541-c000.325302-01.bin","type":"2364","cs1":"active_low"},{"label":"1541 ONEROM BOOTLOADER","description":"Upper E000 ROM","file":"../bootloader/1541-OneROM-Bootloader-Universal-v1.1.0.bin","type":"2364","cs1":"active_low"}]},
+    {"type":"single","roms":[{"description":"1541HUD USB V0.8.0.15 system plugin","file":"firmware-control/plugins/1541-OneROM-1541HUD-USB-v0.8.0.15.bin","type":"system_plugin"}]},
+    {"type":"single","roms":[{"description":"1541HUD Host-Control V0.8.0.15 user plugin","file":"firmware-control/plugins/1541-OneROM-1541HUD-Host-Control-v0.8.0.15.bin","type":"user_plugin"}]},
+    {"type":"multi","roms":[{"description":"Lower C000 ROM","file":"https://www.zimmers.net/anonftp/pub/cbm/firmware/drives/new/1541/1541-c000.325302-01.bin","type":"2364","cs1":"active_low"},{"label":"1541 ONEROM BOOTLOADER","description":"Upper E000 ROM","file":"firmware-control/bootloader/1541-OneROM-Bootloader-Universal-v1.1.0.bin","type":"2364","cs1":"active_low"}]},
     {"type":"multi","roms":[{"description":"Lower C000 ROM","file":"https://www.zimmers.net/anonftp/pub/cbm/firmware/drives/new/1541/1541-c000.325302-01.bin","type":"2364","cs1":"active_low"},{"label":"ORIGINAL","description":"Upper E000 ROM","file":"https://www.zimmers.net/anonftp/pub/cbm/firmware/drives/new/1541/1541-e000.901229-05.bin","type":"2364","cs1":"active_low"}]}
   ],
   "notes": "LOWER SOCKET / UB3: slots 0 and 1 are reserved for USB and Host-Control plugins. ROM slot 1 is the first selectable startup ROM. No JiffyDOS or private ROM input is included. Add only ROM images you are permitted to use."
