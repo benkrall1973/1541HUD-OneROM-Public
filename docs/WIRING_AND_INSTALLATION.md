@@ -44,8 +44,8 @@ installation procedure.
 
 | Function | UB3 / Fire-24E endpoint | 1541 destination | Electrical rule |
 | --- | --- | --- | --- |
-| IEC selector A (bit 0) | GPIO24 / `SEL_A` | UC3 (6522) pin 15 | Drive LOW or release INPUT only; never drive HIGH. |
-| IEC selector B (bit 1) | GPIO25 / `SEL_B` | UC3 (6522) pin 16 | Drive LOW or release INPUT only; never drive HIGH. |
+| IEC selector A (bit 0) | GPIO25 / `SEL_A` | UC3 (6522) pin 15 | Drive LOW or release INPUT only; never drive HIGH. |
+| IEC selector B (bit 1) | GPIO24 / `SEL_B` | UC3 (6522) pin 16 | Drive LOW or release INPUT only; never drive HIGH. |
 | Upper/lower ROM select extension | X1 | pin 20 of the *other* 2364 ROM socket | Insulated fly-lead or removable Dupont lead; see socket table below. |
 | Write-protect override control | X2 / GPIO8 | 5.1 kΩ resistor, then NPN base | Never connect X2 directly to a 1541 logic node. |
 | Write-protect override pull-down | NPN collector | P6 pin 12 | The only 1541 WP node driven by UB3. |
@@ -55,7 +55,7 @@ installation procedure.
 selector input; INPUT releases it to the drive pull-up. Their relationship to
 the saved IEC address is:
 
-| IEC address | GPIO24 / SEL_A / UC3-15 | GPIO25 / SEL_B / UC3-16 |
+| IEC address | GPIO25 / SEL_A / UC3-15 | GPIO24 / SEL_B / UC3-16 |
 | --- | --- | --- |
 | 8 | LOW | LOW |
 | 9 | INPUT | LOW |
