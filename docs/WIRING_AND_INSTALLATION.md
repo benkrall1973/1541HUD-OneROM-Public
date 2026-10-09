@@ -13,6 +13,27 @@ Do not swap the boards. UB4 is only electrically passive when it is running
 the supplied passive Monitor image; a normal ROM-serving V8 image in UB4 is
 not interchangeable and can disrupt the drive.
 
+## Choose the topology before wiring
+
+There are two supported Control arrangements, depending on whether a Monitor
+board is installed:
+
+| Installed boards | UB3 Control placement | UB4 Monitor placement | Supported by this package |
+| --- | --- | --- | --- |
+| UB3 only | lower **or** upper ROM socket | none | yes; use the matching Control manifest and route X1 to the opposite socket pin 20 |
+| UB3 + UB4 | lower ROM socket | upper ROM socket | yes; the standard paired 1541HUD arrangement |
+
+Without UB4, UB3 can serve either ROM socket because the Control composition
+has lower- and upper-socket examples. The only wiring change is X1: it must
+reach pin 20 of the opposite ROM socket.
+
+With UB4 installed, the topology is not interchangeable. UB3 must remain in
+the lower socket because it is the ROM-serving Control board, and the supplied
+UB4 V0.8.0.15 Monitor image must be installed in the upper socket. No
+lower-socket Monitor image is distributed: it has no supported paired use case
+in this release and has not been separately hardware-qualified. Do not move
+the existing upper-socket Monitor image to the lower socket.
+
 ## Verified UB3 Control pinout
 
 This table is the complete externally wired Control interface for the
