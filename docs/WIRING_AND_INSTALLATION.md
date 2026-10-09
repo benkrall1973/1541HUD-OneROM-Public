@@ -46,7 +46,7 @@ installation procedure.
 | --- | --- | --- | --- |
 | IEC selector A (bit 0) | GPIO24 / `SEL_A` | UC3 (6522) pin 15 | Drive LOW or release INPUT only; never drive HIGH. |
 | IEC selector B (bit 1) | GPIO25 / `SEL_B` | UC3 (6522) pin 16 | Drive LOW or release INPUT only; never drive HIGH. |
-| Upper/lower ROM select extension | X1 | pin 20 of the *other* 2364 ROM socket | One insulated fly-lead; see socket table below. |
+| Upper/lower ROM select extension | X1 | pin 20 of the *other* 2364 ROM socket | Insulated fly-lead or removable Dupont lead; see socket table below. |
 | Write-protect override control | X2 / GPIO8 | 5.1 kΩ resistor, then NPN base | Never connect X2 directly to a 1541 logic node. |
 | Write-protect override pull-down | NPN collector | P6 pin 12 | The only 1541 WP node driven by UB3. |
 | Write-protect override return | NPN emitter | 1541 ground | Common ground with the OneROM/drive. |
@@ -102,6 +102,15 @@ occupied by UB4, but the destination remains the upper-socket pin-20 net:
 The shipped paired V0.8 firmware uses **only the first row**: UB3 lower and
 UB4 Monitor upper. The upper-socket UB3 arrangement is a Control-only/custom
 topology and cannot share the upper socket with UB4.
+
+### Removable X1 connection
+
+For a removable connection, with all power removed, solder a short header pin
+to the exposed top of pin 20 on the OneROM installed in the opposite socket.
+Run a female Dupont jumper from UB3 `X1` to that header pin. In the standard
+paired layout, this is UB3 X1 to the top-side pin 20 of the upper-socket UB4
+OneROM. Use insulated wire, strain relief, and continuity-check X1 to the
+intended pin-20 net before power is applied. Do not bridge adjacent DIP pins.
 
 ## Before installation
 
@@ -161,8 +170,8 @@ order from a generic transistor drawing. The validated circuit has **no**
 base-to-emitter pull-down; do not add one without electrical review and new
 qualification.
 
-Never connect X2 directly to P6 pin 12, UC2 pin 14, or a TrackDuino A3 lead.
-TrackDuino A3 / UC2 pin 14 remains observation-only and is not a UB3 output.
+Never connect X2 directly to P6 pin 12 or UC2 pin 14. UC2 pin 14 remains
+observation-only and is not a UB3 output.
 
 | Command state | GPIO8 / transistor | P6 pin 12 | Expected result |
 | --- | --- | --- | --- |
