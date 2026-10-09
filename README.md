@@ -36,6 +36,16 @@ validated, do not treat any artifact in this repository as flash-ready.
 5. Follow [flashing and recovery](docs/FLASHING.md) one board at a time.
 6. Install 1541HUD and/or the C64 configurator after firmware validation.
 
+## Optional control wiring
+
+The UB3 ROM/USB Control function does **not** require the programmable IEC
+address wiring or the write-protect override circuit. Those are independent,
+optional installation features: leave the 1541's normal address straps in
+place when programmable IEC addressing is not wanted, and omit the X2/GPIO8
+transistor circuit when write-protect override is not wanted. X1 is separate:
+it is required whenever UB3 must serve both halves of the 1541 ROM address
+range.
+
 ## Components
 
 - `firmware-monitor/` contains the complete UB4 V0.8.0.15 passive Monitor

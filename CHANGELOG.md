@@ -18,6 +18,8 @@ private-repository history are intentionally not duplicated here.
 
 - Added wiring, socket, USB-power, X1, IEC-selector, and write-protect
   override guidance.
+- Clarified that programmable IEC addressing and write-protect override are
+  optional circuits, not prerequisites for UB3 ROM/USB or UB4 Monitor use.
 - Added flashing/recovery procedure, release manifest, checksums,
   compatibility limitations, ROM licensing rules, and component technical
   references.

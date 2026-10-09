@@ -34,6 +34,22 @@ lower-socket Monitor image is distributed: it has no supported paired use case
 in this release and has not been separately hardware-qualified. Do not move
 the existing upper-socket Monitor image to the lower socket.
 
+## Optional features: IEC addressing and write-protect override
+
+The IEC-selector and write-protect-override connections are **optional**. UB3
+still provides ROM service, USB configuration, ROM selection, and NV storage
+without either circuit installed. They are not prerequisites for a basic UB3
+or paired UB3/UB4 installation.
+
+- Install `SEL_A`/`SEL_B` only when software-selectable IEC addresses 8–11 are
+  desired. With these lines omitted, retain the 1541's original J1/J2 address
+  straps and use the drive's existing fixed address.
+- Install the X2/GPIO8 transistor circuit only when USB-controlled
+  write-protect override is desired. Without it, `ROMWP` cannot alter the
+  drive and the physical notch-sensor behavior remains normal.
+- X1 is not part of either optional feature. It is the ROM-address extension
+  required for UB3 to serve both ROM halves.
+
 ## Verified UB3 Control pinout
 
 This table is the complete externally wired Control interface for the
@@ -67,6 +83,10 @@ classic symptom where saved NV state looks correct but physical addresses 9
 and 10 are reversed.
 
 ### IEC selector installation: test first, modify later
+
+Skip this entire section if programmable IEC addressing is not required. Do
+not cut straps or attach selector wiring merely because the firmware supports
+the feature.
 
 Do not begin by cutting traces on a working 1541. Early validation should use
 insulated IC test clips on **UC3 pins 15 and 16** and a temporary ground/test
@@ -144,6 +164,9 @@ attached.
 
 ## Write-protect override wiring
 
+This entire circuit is optional. Skip it if the drive should retain ordinary
+physical write protection only; UB3 and UB4 continue to operate normally.
+
 The Control firmware provides a volatile, USB-controlled write-protect
 override. OFF leaves the physical disk-notch sensor in control; ON pulls the
 sensor-side WP signal low so the drive appears writable. It is not a permanent
@@ -196,9 +219,11 @@ pin, continuity result, idle voltage, and active polarity before installation.
 
 1. Start the 1541 with UB3 installed; verify normal DOS operation.
 2. Connect UB3 USB and confirm the Control device appears in 1541HUD.
-3. Set a valid ROM slot and IEC address, read the confirmed reply, power-cycle
-   the 1541 with UB3 USB VBUS absent, then confirm the values persist.
+3. Set a valid ROM slot and read the confirmed reply. If the optional IEC
+   selector wiring is installed, also select an IEC address and confirm the
+   physical address. Power-cycle the 1541 with UB3 USB VBUS absent, then
+   confirm the applicable values persist.
 4. Install/connect UB4. Confirm no red LED/motor fault, then verify live
    Monitor activity in 1541HUD.
-5. Test write-protect override physically, not only by observing a successful
-   USB command response.
+5. If the optional write-protect circuit is installed, test it physically—not
+   only by observing a successful USB command response.

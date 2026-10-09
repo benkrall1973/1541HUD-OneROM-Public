@@ -31,14 +31,20 @@ is not an equivalent Control assembly for this use case.
 
 ## IEC and write-protect behavior
 
-The Host-Control plugin maps the saved IEC address using GPIO24/GPIO25 as
-open-drain-style LOW or INPUT states. It must never drive those selector lines
-HIGH. The valid mapping is 8 = LOW/LOW, 9 = INPUT/LOW, 10 = LOW/INPUT, and
-11 = INPUT/INPUT. An invalid value defaults electrically to address 8.
+The Host-Control plugin maps the saved IEC address using GPIO25/`SEL_A` and
+GPIO24/`SEL_B` as open-drain-style LOW or INPUT states. It must never drive
+those selector lines HIGH. The valid mapping is 8 = LOW/LOW, 9 = INPUT/LOW,
+10 = LOW/INPUT, and 11 = INPUT/INPUT. An invalid value defaults electrically
+to address 8. This is an optional feature: without the selector wires, retain
+the 1541's fixed J1/J2 strap address and treat `ROMIEC` as saved state only,
+not a physical-address change.
 
-Write-protect override is a hardware function coupled to the installation's
-validated transistor interface. `ROMWP=ON` or `ROMWP=OFF` is only a Control
-request; acceptance requires physical behavior verification at the drive.
+Write-protect override is an optional hardware function coupled to the
+installation's validated transistor interface. If its X2/GPIO8 transistor
+circuit is not installed, omit `ROMWP` testing and retain normal physical
+notch-sensor protection. If installed, `ROMWP=ON` or `ROMWP=OFF` is only a
+Control request; acceptance requires physical behavior verification at the
+drive.
 
 ## Custom composition
 

@@ -11,6 +11,11 @@ state, and write-protect override. UB4 provides passive telemetry only. The
 V0.8 Monitor image uses OneROM standby plus a local passive-core integration;
 standby alone is not sufficient for this Monitor.
 
+Programmable IEC addressing and write-protect override are optional hardware
+features. A normal fixed-address, physical-write-protect 1541 installation may
+omit both wiring circuits while retaining UB3 ROM/USB operation and, where
+installed, UB4 monitoring.
+
 ## Important limitations
 
 - This release supports Fire-24E RP2350 hardware only. Do not flash it to a
