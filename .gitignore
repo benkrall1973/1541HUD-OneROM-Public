@@ -1,0 +1,9 @@
+# Local packaging and verification output
+_staging/
+_verification/
+*.log
+
+# Never publish private ROM inputs or local settings
+roms/
+*.local.json
+onerom_drive_bindings.json
