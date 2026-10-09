@@ -48,7 +48,8 @@ and 10 are reversed.
 ## X1 socket-routing table
 
 X1 extends chip select to the second 8 KiB ROM half. It always lands on pin 20
-of the **empty/opposite** 2364 ROM socket:
+of the **opposite** 2364 ROM socket. In the paired layout that socket is
+occupied by UB4, but the destination remains the upper-socket pin-20 net:
 
 | UB3 Control socket | UB3 serves directly | X1 must connect to |
 | --- | --- | --- |
