@@ -44,8 +44,8 @@ installation procedure.
 
 | Function | UB3 / Fire-24E endpoint | 1541 destination | Electrical rule |
 | --- | --- | --- | --- |
-| IEC selector A (bit 0) | GPIO24 / `SEL_A` | UC1 (6522) pin 15 | Drive LOW or release INPUT only; never drive HIGH. |
-| IEC selector B (bit 1) | GPIO25 / `SEL_B` | UC1 (6522) pin 16 | Drive LOW or release INPUT only; never drive HIGH. |
+| IEC selector A (bit 0) | GPIO24 / `SEL_A` | UC3 (6522) pin 15 | Drive LOW or release INPUT only; never drive HIGH. |
+| IEC selector B (bit 1) | GPIO25 / `SEL_B` | UC3 (6522) pin 16 | Drive LOW or release INPUT only; never drive HIGH. |
 | Upper/lower ROM select extension | X1 | pin 20 of the *other* 2364 ROM socket | One insulated fly-lead; see socket table below. |
 | Write-protect override control | X2 / GPIO8 | 5.1 kΩ resistor, then NPN base | Never connect X2 directly to a 1541 logic node. |
 | Write-protect override pull-down | NPN collector | P6 pin 12 | The only 1541 WP node driven by UB3. |
@@ -55,7 +55,7 @@ installation procedure.
 selector input; INPUT releases it to the drive pull-up. Their relationship to
 the saved IEC address is:
 
-| IEC address | GPIO24 / SEL_A / UC1-15 | GPIO25 / SEL_B / UC1-16 |
+| IEC address | GPIO24 / SEL_A / UC3-15 | GPIO25 / SEL_B / UC3-16 |
 | --- | --- | --- |
 | 8 | LOW | LOW |
 | 9 | INPUT | LOW |
@@ -69,16 +69,16 @@ and 10 are reversed.
 ### IEC selector installation: test first, modify later
 
 Do not begin by cutting traces on a working 1541. Early validation should use
-insulated IC test clips on **UC1 pins 15 and 16** and a temporary ground/test
+insulated IC test clips on **UC3 pins 15 and 16** and a temporary ground/test
 lead arrangement. Confirm that 1541HUD can select IEC 8, 9, 10, and 11 and
 that the physical address agrees with the saved value before soldering any
 permanent wiring.
 
-For a reversible installation, use a suitable socket/interposer between UC1
+For a reversible installation, use a suitable socket/interposer between UC3
 and its permanent PCB socket that isolates the two selector pins (15 and 16)
 from the board-side default straps, then route those isolated pins to SEL_A and
 SEL_B. This allows the original 1541 to be restored without cutting PCB traces.
-Do not alter unrelated UC1 pins; the rest of that 6522 is not decoration.
+Do not alter unrelated UC3 pins; the rest of that 6522 is not decoration.
 
 For a permanent installation, the board's IEC-address straps **J1/J2** may be
 opened/cut only after the test-clip mapping has been confirmed. Opening both
