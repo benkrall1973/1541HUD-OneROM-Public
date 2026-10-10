@@ -34,6 +34,23 @@ lower-socket Monitor image is distributed: it has no supported paired use case
 in this release and has not been separately hardware-qualified. Do not move
 the existing upper-socket Monitor image to the lower socket.
 
+## Installation reference photos
+
+The following are photographs of the qualified development/test installation.
+They illustrate the physical context only; use the pin tables and electrical
+rules below for actual connections. Temporary clip leads and the breadboard
+are validation equipment, not permanent-installation instructions.
+
+| Paired board placement | Temporary selector testing |
+| --- | --- |
+| ![Two Fire-24E OneROM boards installed in the 1541 ROM area](images/paired-oneroms-and-ic-clips.jpg) | ![Temporary IC clips used while verifying IEC selector wiring](images/temporary-iec-selector-test-clips.jpg) |
+| UB3 Control and UB4 Monitor in the paired test installation. | IC clips used to validate IEC addressing before permanent work. |
+
+| Board detail | Optional write-protect circuit validation |
+| --- | --- |
+| ![Detailed view of paired Fire-24E OneROM boards in the 1541](images/paired-oneroms-installed-detail.jpg) | ![Breadboarded NPN write-protect override test circuit](images/write-protect-override-breadboard.jpg) |
+| Detail view of the installed OneROM boards and test leads. | Temporary breadboard validation of the optional WP override circuit. |
+
 ## Optional features: IEC addressing and write-protect override
 
 The IEC-selector and write-protect-override connections are **optional**. UB3
