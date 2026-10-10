@@ -1,6 +1,7 @@
 # Local packaging and verification output
 _staging/
 _verification/
+firmware-control/output/
 *.log
 
 # Never publish private ROM inputs or local settings

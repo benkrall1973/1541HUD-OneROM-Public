@@ -17,7 +17,8 @@ JSON manifest.
 
 ## Build a UB3 lower-socket image
 
-Open PowerShell in this directory and run:
+Open PowerShell at the **repository root** (the directory containing
+`firmware-control/`) and run:
 
 ```powershell
 .\onerom-cli\onerom-v0.5.0.exe firmware build `
@@ -32,8 +33,8 @@ The supplied example manifests intentionally use paths relative to the
 **repository root**, because OneROM CLI resolves manifest file paths from the
 current working directory.
 
-Create the `output` directory before running the command if the CLI does not
-create it on the installed version.
+Create `firmware-control/output` before running the command if the CLI does
+not create it on the installed version.
 
 The lower example is the relevant one for UB3 in the standard 1541HUD setup.
 The upper example is supplied for custom hardware layouts; do not use it for
