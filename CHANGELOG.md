@@ -11,7 +11,7 @@ private-repository history are intentionally not duplicated here.
 - UB3 Control builder kit with patched V8 base, V0.8.0.15 USB/Host-Control
   plugins, bootloader, CLI, and safe lower/upper configuration examples.
 - UB3 V0.8.0.17 Original-ROM-only lower-socket composition candidate.
-- 1541HUD Windows x64 V0.8.0.12 portable executable.
+- 1541HUD Windows x64 V0.8.0.13 portable executable.
 - C64 OneROM Configurator V0.8.0.01 as `.PRG` and `.d64`.
 
 ### Documentation
@@ -23,6 +23,8 @@ private-repository history are intentionally not duplicated here.
 - Added flashing/recovery procedure, release manifest, checksums,
   compatibility limitations, ROM licensing rules, and component technical
   references.
+- Added V0.8.0.13 HUD screenshots and a visible Control-feature wiring
+  reminder for optional IEC selector and write-protect override hardware.
 
 ### Known qualification boundary
 

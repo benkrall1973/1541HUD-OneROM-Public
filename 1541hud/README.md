@@ -1,8 +1,12 @@
-# 1541HUD V0.8.0.12 for Windows
+# 1541HUD V0.8.0.13 for Windows
 
-`1541HUD-V0.8.0.12-win-x64.exe` is the portable Windows application for the
+`1541HUD-V0.8.0.13-win-x64.exe` is the portable Windows application for the
 1541HUD monitor/control display. It communicates with the OneROM USB CDC
 interfaces and supports the V0.8 settings and diagnostics workflow.
+
+The Control OneROM Features checkbox card includes a visible wiring reminder:
+IEC-address control requires the optional SEL_A/SEL_B wiring, and write-protect
+override requires the optional X2/GPIO8 transistor circuit.
 
 ## Use
 

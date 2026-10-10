@@ -1,6 +1,6 @@
 # 1541HUD Windows Technical Reference
 
-1541HUD V0.8.0.12 is the Windows operator and diagnostic application for the
+1541HUD V0.8.0.13 is the Windows operator and diagnostic application for the
 paired UB3/UB4 system. It is not firmware and does not itself own drive state.
 It displays confirmed replies from UB3 Control and physical telemetry from UB4
 Monitor.
@@ -19,3 +19,7 @@ The portable executable creates a default parameter/binding JSON when absent.
 Keep that JSON with the deployment when preserving device role assignments and
 preferences. If a port is busy, exit any other terminal, diagnostic tool, or
 HUD instance before reconnecting.
+
+V0.8.0.13 adds a visible wiring reminder to the Control OneROM Features
+checkbox card: IEC-address control requires SEL_A/SEL_B wiring, while
+write-protect override requires the optional X2/GPIO8 transistor circuit.

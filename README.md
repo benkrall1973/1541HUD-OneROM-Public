@@ -74,8 +74,31 @@ or wire colours as a universal 1541 wiring standard.
   manifests.
 - `c64-onerom-configurator/` contains the V0.8.0.01 C64 `.PRG` and `.d64`
   release files.
-- `1541hud/` contains the portable Windows V0.8.0.12 application and its
+- `1541hud/` contains the portable Windows V0.8.0.13 application and its
   checksum.
+
+## 1541HUD V0.8.0.13 screenshots
+
+The Windows HUD combines passive UB4 evidence with confirmed UB3 Control
+operations. The Control-feature checkbox card visibly reminds the operator
+that programmable IEC addressing requires SEL_A/SEL_B wiring and write-protect
+override requires the optional X2/GPIO8 transistor circuit.
+
+| Live dashboard | Protected idle state |
+| --- | --- |
+| ![Writing activity and enabled write-protect override](1541hud/images/v0.8.0.13/01-dashboard-writing-override.png) | ![Protected idle dashboard](1541hud/images/v0.8.0.13/02-dashboard-protected.png) |
+
+| Control-feature wiring reminder | Control OneROM assignment |
+| --- | --- |
+| ![Control feature checkboxes with visible wiring reminder](1541hud/images/v0.8.0.13/03-settings-control-features.png) | ![Control OneROM setup](1541hud/images/v0.8.0.13/04-control-setup.png) |
+
+| Activity log | Card configuration |
+| --- | --- |
+| ![OneROM activity and telemetry log](1541hud/images/v0.8.0.13/05-activity-log.png) | ![HUD card visibility and order configuration](1541hud/images/v0.8.0.13/06-card-configuration.png) |
+
+| Appearance controls |
+| --- |
+| ![HUD appearance settings](1541hud/images/v0.8.0.13/07-appearance-menu.png) |
 
 ## C64 Configurator hardware validation
 

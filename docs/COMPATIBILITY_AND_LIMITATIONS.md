@@ -4,7 +4,7 @@
 
 This package targets a Fire-24E RP2350 paired-OneROM 1541 installation:
 UB3 Control in the lower ROM socket and UB4 passive Monitor in the upper ROM
-socket. It is designed as a coupled V0.8 system with 1541HUD V0.8.0.12.
+socket. It is designed as a coupled V0.8 system with 1541HUD V0.8.0.13.
 
 UB3 provides ROM service, ROM selection, boot IEC address, persistent NV
 state, and write-protect override. UB4 provides passive telemetry only. The
