@@ -83,23 +83,16 @@ The C64 Configurator V0.8.0.01 was validated on real C64/1541 hardware for
 drive discovery, dynamic ROM-slot listing, ROM startup selection, persistent
 IEC-address changes, and temporary IEC-address use. The ROM labels in these
 photos are from the test configuration; this public repository does not ship
-licensed replacement ROM images.
+licensed replacement ROM images. The full validation sequence is retained in
+the [Configurator technical reference](c64-onerom-configurator/TECHNICAL_REFERENCE.md).
 
 | Drive polling | OneROM service discovery |
 | --- | --- |
 | ![Drive polling finds IEC devices](c64-onerom-configurator/images/hardware-validation/01-drive-polling.jpg) | ![Configurator finds the Control OneROM in the lower socket](c64-onerom-configurator/images/hardware-validation/02-service-discovery.jpg) |
 
-| ROM selection | ROM save |
+| ROM selection | IEC address entry |
 | --- | --- |
-| ![Dynamically discovered seven-slot ROM menu](c64-onerom-configurator/images/hardware-validation/03-rom-selection.jpg) | ![Selected ROM save and reboot confirmation](c64-onerom-configurator/images/hardware-validation/04-rom-save.jpg) |
-
-| IEC address menu | Persistent IEC address |
-| --- | --- |
-| ![IEC address menu and temporary-use path](c64-onerom-configurator/images/hardware-validation/07-address-menu.jpg) | ![Persistent boot address saved and verified](c64-onerom-configurator/images/hardware-validation/06-address-save.jpg) |
-
-| IEC address entry | Temporary IEC address |
-| --- | --- |
-| ![Boot address selection entry screen](c64-onerom-configurator/images/hardware-validation/05-address-entry.jpg) | ![Temporary IEC address change verified](c64-onerom-configurator/images/hardware-validation/08-temporary-address-verify.jpg) |
+| ![Dynamically discovered seven-slot ROM menu](c64-onerom-configurator/images/hardware-validation/03-rom-selection.jpg) | ![Boot address selection entry screen](c64-onerom-configurator/images/hardware-validation/05-address-entry.jpg) |
 
 The full artifact inventory, exact target roles, and qualification status are
 in [RELEASE_MANIFEST.md](RELEASE_MANIFEST.md).
