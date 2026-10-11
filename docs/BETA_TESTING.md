@@ -8,17 +8,17 @@ upper ROM socket. Read the [release manifest](../RELEASE_MANIFEST.md),
 [wiring guide](WIRING_AND_INSTALLATION.md), and [flashing and recovery guide](FLASHING.md)
 before using any artifact.
 
-The UB4 V0.8.0.08 Monitor image is hardware-tested for that upper-socket role.
-1541HUD V0.8.0.13 and C64 Configurator V0.8.0.01 are released application
-artifacts. Their limitations and required wiring remain in the linked guides.
+UB3 V0.8.0.17 Control and UB4 V0.8.0.08 Monitor are hardware-tested for their
+respective lower- and upper-socket roles in that paired installation. 1541HUD
+V0.8.0.13 and C64 Configurator V0.8.0.01 are released application artifacts.
+Their limitations and required wiring remain in the linked guides.
 
-## Do not flash the public UB3 candidate
+## UB3 Control release scope
 
 `onerom-1541HUD-Control-Lower-v0.8.0.17-original-only-fire-24-e-rp2350.bin`
-is composition-inspected, not hardware-qualified. It is included for review
-and future controlled qualification; it is **not** a general beta flashing
-baseline. Do not use it on a tester's drive until the project publishes a
-hardware-qualified Control release for that exact image.
+is the hardware-tested, Original-ROM-only UB3 lower-socket Control image for
+this beta. It must not be flashed to passive UB4, a different OneROM model, or
+used as evidence that a different 1541 board/mechanism layout is safe.
 
 ## Safe testing boundaries
 

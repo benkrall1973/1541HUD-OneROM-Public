@@ -22,11 +22,11 @@ checksum with an engineering result.
   experimental candidates; and
 - internal patch-development notes.
 
-This is a limited public beta. The hardware-tested UB4 Monitor and the
-released Windows/C64 applications may be evaluated within their documented
-scope. The UB3 V0.8.0.17 Control image is a composition-inspected candidate:
-do **not** flash it as a beta baseline until it has been hardware-qualified on
-the recipient installation. See [RELEASE_MANIFEST.md](RELEASE_MANIFEST.md)
+This is a limited public beta. UB3 V0.8.0.17 Control and UB4 V0.8.0.08 Monitor
+were hardware-tested in the documented paired Fire-24E installation. The
+Windows/C64 applications may be evaluated within their documented scope. Do
+not treat this as validation for different OneROM models, socket roles, or
+1541 board/mechanism variants. See [RELEASE_MANIFEST.md](RELEASE_MANIFEST.md)
 and [Beta testing](docs/BETA_TESTING.md) before changing firmware.
 
 ## Start here

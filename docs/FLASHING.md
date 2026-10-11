@@ -11,9 +11,10 @@ Do not drag a `.bin` onto a BOOTSEL mass-storage volume or rename it to `.uf2`.
 
 ## Flash UB3 Control
 
-The bundled `firmware-control/releases/` image is an Original-ROM-only
-composition candidate. It must be hardware-qualified for the recipient's
-installation before being treated as a release baseline.
+The bundled `firmware-control/releases/` image is the hardware-tested
+Original-ROM-only Control assembly for the documented Fire-24E lower-socket
+role. It is not validated for different board models, socket roles, or 1541
+board/mechanism variants.
 
 1. Disconnect UB4 USB and power down the 1541 where practical.
 2. Put UB3 into BOOTSEL mode and connect it to the computer.

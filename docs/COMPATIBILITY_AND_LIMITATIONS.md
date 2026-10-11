@@ -20,9 +20,9 @@ installed, UB4 monitoring.
 
 - This release supports Fire-24E RP2350 hardware only. Do not flash it to a
   different OneROM model without a separately qualified image.
-- The published Original-ROM-only UB3 image has passed composition/inspection,
-  but is a recipient-installation candidate rather than a universal
-  hardware-qualified baseline. Test it before relying on it.
+- The published Original-ROM-only UB3 V0.8.0.17 image was hardware-tested in
+  the paired Fire-24E lower-socket installation. It is not a universal
+  qualification for a different 1541 board/mechanism or socket role.
 - The UB4 V0.8.0.08 Monitor assembly was hardware-tested in the paired
   installation. Monitor probe wiring remains hardware-specific and must be
   validated on each 1541 board/mechanism.

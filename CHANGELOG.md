@@ -11,7 +11,7 @@ private-repository history are intentionally not duplicated here.
   as verified `.bin` and RP2350 BOOTSEL `.uf2` artifacts.
 - UB3 Control builder kit with patched V8 base, V0.8.0.15 USB/Host-Control
   plugins, bootloader, CLI, and safe lower/upper configuration examples.
-- UB3 V0.8.0.17 Original-ROM-only lower-socket composition candidate.
+- UB3 V0.8.0.17 Original-ROM-only lower-socket hardware-tested Control image.
 - 1541HUD Windows x64 V0.8.0.13 portable executable.
 - C64 OneROM Configurator V0.8.0.01 as `.PRG` and `.d64`.
 
@@ -31,6 +31,6 @@ private-repository history are intentionally not duplicated here.
 
 - UB4 V0.8.0.08 was built from the consolidated private recovery kit, flashed
   to UB4, and hardware-tested in the paired upper-socket Monitor role.
-- The public UB3 Original-ROM-only V0.8.0.17 composition is checksum-verified
-  and CLI-inspected, but remains a hardware-test candidate until it is tested
-  on the target installation.
+- The public UB3 Original-ROM-only V0.8.0.17 composition was flashed with
+  verification and hardware-tested in the paired Fire-24E lower-socket
+  Control role.
