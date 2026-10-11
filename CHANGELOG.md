@@ -3,7 +3,7 @@
 This changelog tracks public-package releases. Engineering experiments and
 private-repository history are intentionally not duplicated here.
 
-## Unreleased — V0.8 public beta package
+## V0.8 public beta package
 
 ### Included
 

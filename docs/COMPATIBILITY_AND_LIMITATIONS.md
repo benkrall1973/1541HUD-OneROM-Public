@@ -23,7 +23,7 @@ installed, UB4 monitoring.
 - The published Original-ROM-only UB3 image has passed composition/inspection,
   but is a recipient-installation candidate rather than a universal
   hardware-qualified baseline. Test it before relying on it.
-- The UB4 V0.8.0.07 Monitor assembly was hardware-tested in the paired
+- The UB4 V0.8.0.08 Monitor assembly was hardware-tested in the paired
   installation. Monitor probe wiring remains hardware-specific and must be
   validated on each 1541 board/mechanism.
 - Control persistence depends on the V8 idle-yield integration in the supplied

@@ -22,8 +22,12 @@ checksum with an engineering result.
   experimental candidates; and
 - internal patch-development notes.
 
-The first public release is being assembled. Until a release is marked
-validated, do not treat any artifact in this repository as flash-ready.
+This is a limited public beta. The hardware-tested UB4 Monitor and the
+released Windows/C64 applications may be evaluated within their documented
+scope. The UB3 V0.8.0.17 Control image is a composition-inspected candidate:
+do **not** flash it as a beta baseline until it has been hardware-qualified on
+the recipient installation. See [RELEASE_MANIFEST.md](RELEASE_MANIFEST.md)
+and [Beta testing](docs/BETA_TESTING.md) before changing firmware.
 
 ## Start here
 
@@ -34,7 +38,8 @@ validated, do not treat any artifact in this repository as flash-ready.
 3. Read the [hardware and use disclaimer](DISCLAIMER.md).
 4. Verify the exact artifact using [SHA256SUMS.txt](SHA256SUMS.txt).
 5. Follow [flashing and recovery](docs/FLASHING.md) one board at a time.
-6. Install 1541HUD and/or the C64 configurator after firmware validation.
+6. Read [beta testing](docs/BETA_TESTING.md) and install 1541HUD and/or the
+   C64 configurator after firmware validation.
 
 ## Optional control wiring
 
@@ -66,9 +71,10 @@ or wire colours as a universal 1541 wiring standard.
 
 ## Components
 
-- `firmware-monitor/` contains the complete UB4 V0.8.0.07 passive Monitor
-  image and its checksum. It is upper-socket-only and must be paired with a
-  compatible UB3 Control installation.
+- `firmware-monitor/` contains the hardware-tested UB4 V0.8.0.08 passive
+  Monitor `.bin` and BOOTSEL `.uf2` images and their checksums. It is
+  upper-socket-only and must be paired with a compatible UB3 Control
+  installation.
 - `firmware-control/` contains the UB3 custom-composition kit: patched V8
   base, compiled plugins, bootloader, verified CLI, and no-JiffyDOS example
   manifests.

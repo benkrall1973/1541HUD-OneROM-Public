@@ -40,7 +40,7 @@ only ROMs you are authorized to use.
 
    ```powershell
    .\firmware-control\onerom-cli\onerom-v0.5.0.exe program `
-     --firmware .\firmware-monitor\onerom-1541HUD-Monitor-Upper-v0.8.0.07-fire-24-e-rp2350.bin `
+     --firmware .\firmware-monitor\onerom-1541HUD-Monitor-Upper-v0.8.0.08-fire-24-e-rp2350.bin `
      --verify --scan-slots
    ```
 
