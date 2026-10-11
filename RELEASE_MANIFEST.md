@@ -18,7 +18,10 @@ build.
 
 `SHA256SUMS.txt` at repository root is the package checksum manifest. Each
 component directory also carries a smaller checksum file for its local
-artifacts. On Windows, verify an artifact with:
+artifacts. It covers byte-for-byte distributable binaries and binary build
+inputs. The JSON example manifests are Git-tracked source text and are not
+included because a normal Windows Git checkout may rewrite their line endings.
+On Windows, verify an artifact with:
 
 ```powershell
 Get-FileHash -Algorithm SHA256 .\path\to\artifact
