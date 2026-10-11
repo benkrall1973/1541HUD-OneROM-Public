@@ -1,6 +1,6 @@
-# UB4 passive Monitor firmware — V0.8.0.15
+# UB4 passive Monitor firmware - V0.8.0.07
 
-`onerom-1541HUD-Monitor-Upper-v0.8.0.15-fire-24-e-rp2350.bin` is the complete
+`onerom-1541HUD-Monitor-Upper-v0.8.0.07-fire-24-e-rp2350.bin` is the complete
 1541HUD UB4 Monitor image for a Fire-24E RP2350 OneROM.
 
 ## Hardware role
@@ -25,6 +25,7 @@ rules are in [`../docs/WIRING_AND_INSTALLATION.md`](../docs/WIRING_AND_INSTALLAT
 
 ## Release status
 
-This is the hardware-tested V0.8.0.15 Monitor assembly carried from the
-private V8 release candidate. Public packaging and release notes are still in
-progress; use only with the matching 1541HUD V8 Control/host release.
+This is the current hardware-tested V0.8.0.07 Monitor assembly. It was
+flashed to UB4 and verified with USB enumeration, 1541HUD connection, and
+live Monitor telemetry. Use it only with the matching 1541HUD V8 Control/host
+release.

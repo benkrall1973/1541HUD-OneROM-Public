@@ -7,7 +7,7 @@ private-repository history are intentionally not duplicated here.
 
 ### Included
 
-- UB4 passive Monitor V0.8.0.15 for Fire-24E RP2350, upper 1541 ROM socket.
+- UB4 passive Monitor V0.8.0.07 for Fire-24E RP2350, upper 1541 ROM socket.
 - UB3 Control builder kit with patched V8 base, V0.8.0.15 USB/Host-Control
   plugins, bootloader, CLI, and safe lower/upper configuration examples.
 - UB3 V0.8.0.17 Original-ROM-only lower-socket composition candidate.
@@ -28,7 +28,7 @@ private-repository history are intentionally not duplicated here.
 
 ### Known qualification boundary
 
-- UB4 V0.8.0.15 was hardware-tested in the paired upper-socket Monitor role.
+- UB4 V0.8.0.07 was hardware-tested in the paired upper-socket Monitor role.
 - The public UB3 Original-ROM-only V0.8.0.17 composition is checksum-verified
   and CLI-inspected, but remains a hardware-test candidate until it is tested
   on the target installation.

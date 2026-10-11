@@ -6,7 +6,7 @@ UB4 is the passive Monitor OneROM installed in the upper 1541 ROM socket. It
 does not serve ROM data, select a ROM, change IEC address, or own Control NV
 state. Its dedicated USB CDC endpoint publishes Monitor telemetry to 1541HUD.
 
-The supplied V0.8.0.15 image contains both V8 standby configuration and the
+The supplied V0.8.0.07 image contains both V8 standby configuration and the
 required passive-core profile. The passive profile prevents generic ROM-serving
 PIO/DMA startup, leaving bus GPIOs as inputs. This is required to avoid the
 previous USB-connected failure mode: red LED, motor spin, and corrupted 1541

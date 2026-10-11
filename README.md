@@ -66,7 +66,7 @@ or wire colours as a universal 1541 wiring standard.
 
 ## Components
 
-- `firmware-monitor/` contains the complete UB4 V0.8.0.15 passive Monitor
+- `firmware-monitor/` contains the complete UB4 V0.8.0.07 passive Monitor
   image and its checksum. It is upper-socket-only and must be paired with a
   compatible UB3 Control installation.
 - `firmware-control/` contains the UB3 custom-composition kit: patched V8
