@@ -21,11 +21,11 @@ Open PowerShell at the **repository root** (the directory containing
 `firmware-control/`) and run:
 
 ```powershell
-.\onerom-cli\onerom-v0.5.0.exe firmware build `
-  --config .\configs\1541HUD-Control-Lower-v0.8.0.17.example.json `
+.\firmware-control\onerom-cli\onerom-v0.5.0.exe firmware build `
+  --config .\firmware-control\configs\1541HUD-Control-Lower-v0.8.0.17.example.json `
   --board fire-24-e `
-  --base-firmware .\base-firmware\onerom-rp235x-1541HUD-v0.8.0-patched.bin `
-  --output .\output\my-1541HUD-Control-Lower.bin `
+  --base-firmware .\firmware-control\base-firmware\onerom-rp235x-1541HUD-v0.8.0-patched.bin `
+  --output .\firmware-control\output\my-1541HUD-Control-Lower.bin `
   --force
 ```
 
