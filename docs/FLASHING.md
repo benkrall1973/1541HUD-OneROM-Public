@@ -28,7 +28,9 @@ board/mechanism variants.
    ```
 
 5. Reconnect normally. Confirm ROM listing, a valid ROM/IEC save, and a
-   cold-reboot readback.
+   cold-reboot readback. During that reboot, UB3 must receive no USB 5 V/VBUS:
+   unplug it, use a data-only cable, or use a dedicated cable with only its
+   red 5 V conductor interrupted.
 
 To create a custom Control image, follow `firmware-control/README.md` and use
 only ROMs you are authorized to use.

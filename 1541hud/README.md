@@ -16,7 +16,9 @@ override requires the optional X2/GPIO8 transistor circuit.
    on a remembered COM number.
 4. Use Refresh after a C64-side setting change. A successful action is shown
    only after a parsed Control reply; cold-reboot verification remains the
-   final persistence check.
+   final persistence check. During that reboot, UB3 must receive no USB 5 V:
+   unplug USB, use a data-only cable, or use a dedicated cable with its red
+   5 V conductor interrupted.
 
 For hardware/socket placement and the USB power rule, read
 [`../docs/WIRING_AND_INSTALLATION.md`](../docs/WIRING_AND_INSTALLATION.md).

@@ -23,7 +23,9 @@ is NV0 = slot 1 and NV2 = IEC device 8 when valid state has not yet been saved.
 The Control endpoint supplies `ROMLIST` for image-defined slot metadata,
 `ROMGET` for saved state, `ROMSET`, `ROMIEC`, and `ROMWP` commands. A host must
 wait for and parse the firmware reply, then read back and cold-reboot verify;
-serial transmission alone does not establish persistence.
+serial transmission alone does not establish persistence. For that cold reboot,
+UB3 must receive no USB 5 V/VBUS: unplug it, use a data-only cable, or use a
+dedicated cable with only its red 5 V conductor interrupted.
 
 The patched V8 base includes a narrow capture-idle yield integration so the USB
 plugin can enter exclusive flash mode for NV writes. Stock V8 plus the plugins

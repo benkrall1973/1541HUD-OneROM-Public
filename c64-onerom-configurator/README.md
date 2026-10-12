@@ -19,7 +19,9 @@ initial drive-poll screen.
 Load the `.PRG` through your normal C64 transfer method, or mount the `.d64`
 using your normal disk-image workflow. Choose a ROM slot or IEC address, then
 confirm the value after a cold reboot of the 1541. For the UB3 startup read to
-occur, USB VBUS must not keep UB3 powered during that 1541 reboot.
+occur, USB 5 V/VBUS must not keep UB3 powered during that reboot: unplug UB3
+USB, use a data-only cable, or use a dedicated cable with only its red 5 V
+conductor interrupted.
 
 The configurator requires a compatible UB3 V0.8 Control image. It is not a
 standalone replacement for the Control firmware.

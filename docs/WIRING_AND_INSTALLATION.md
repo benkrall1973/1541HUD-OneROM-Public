@@ -177,10 +177,22 @@ UB3 and UB4 enumerate as two separate USB CDC devices. Assign them in 1541HUD
 by their OneROM USB serial numbers, not the Windows COM number; COM numbers
 can change after reconnect.
 
-For UB3, use a data-only USB connection when a 1541 power cycle must make the
-board reread saved NV settings. USB 5 V can keep UB3 running while the 1541 is
-restarted, so it does not perform its startup NV read. This is a sequencing
-rule, not a claim that 5 V damages the board.
+### Required UB3 cold-reboot rule
+
+Whenever you expect a newly saved **startup ROM choice** or **IEC address** to
+take effect, UB3 must shut off completely and then boot again with the 1541.
+USB 5 V/VBUS can keep UB3 alive while the drive itself is restarted, preventing
+that startup read from happening.
+
+Use one of these arrangements for the UB3 USB connection:
+
+- A **data-only USB cable** with USB 5 V/VBUS absent; or
+- A dedicated USB cable with **only its red 5 V/VBUS conductor cut or
+  interrupted**. Keep USB ground and D+/D- connected, and label the cable.
+
+Alternatively, unplug UB3 USB before restarting the 1541 and reconnect it
+after the drive has booted. This is a required persistence-test/boot-sequencing
+procedure, not a claim that USB 5 V damages the board.
 
 Before connecting USB to either board, confirm the 1541 starts normally with
 the installed images. With UB4 connected, the drive must not show a solid red
@@ -246,8 +258,8 @@ pin, continuity result, idle voltage, and active polarity before installation.
 2. Connect UB3 USB and confirm the Control device appears in 1541HUD.
 3. Set a valid ROM slot and read the confirmed reply. If the optional IEC
    selector wiring is installed, also select an IEC address and confirm the
-   physical address. Power-cycle the 1541 with UB3 USB VBUS absent, then
-   confirm the applicable values persist.
+   physical address. Follow the required UB3 cold-reboot rule above (no USB
+   5 V/VBUS to UB3), then confirm the applicable values persist.
 4. Install/connect UB4. Confirm no red LED/motor fault, then verify live
    Monitor activity in 1541HUD.
 5. If the optional write-protect circuit is installed, test it physically—not

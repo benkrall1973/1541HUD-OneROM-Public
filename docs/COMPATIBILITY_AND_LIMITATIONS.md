@@ -31,8 +31,9 @@ installed, UB4 monitoring.
 - Control persistence depends on the V8 idle-yield integration in the supplied
   patched Control base. Replacing that base with stock V8 can cause NV writes
   to stall or be rejected.
-- UB3 USB VBUS must be absent during a 1541 restart that is intended to reread
-  saved IEC/ROM startup state.
+- During a 1541 restart intended to reread saved IEC/ROM startup state, UB3
+  must receive no USB 5 V/VBUS. Unplug UB3 USB, use a data-only cable, or use
+  a dedicated cable with only its red 5 V/VBUS conductor interrupted.
 - The software displays confirmed Control replies and Monitor telemetry; it
   cannot prove a physical wiring change from a successful serial write alone.
 

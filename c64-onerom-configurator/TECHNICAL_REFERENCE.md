@@ -8,8 +8,9 @@ metadata rather than deriving labels from ROM URLs.
 The release preserves the established quit paths and the temporary IEC-address
 workflow. Those flows are intentionally not changed in this package. After a
 setting change, verify it through the configurator or 1541HUD and then perform
-a cold 1541 reboot with UB3 USB VBUS absent to prove the saved startup state
-was reread.
+a cold 1541 reboot with UB3 receiving no USB 5 V/VBUS to prove the saved
+startup state was reread. Unplug USB, use a data-only cable, or use a dedicated
+cable with only its red 5 V conductor interrupted.
 
 The configurator is not a ROM image distributor and contains no licensed DOS
 replacement. It requires a compatible UB3 V0.8 Control image with the USB and

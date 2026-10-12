@@ -46,8 +46,10 @@ for the exact destination and the removable-connection guidance.
    load the C64 Configurator. UB4 is not needed for this test.
 2. Read the ROM list and select a valid ROM choice. Confirm that the tool shows
    a parsed, successful Control reply.
-3. Disconnect UB3 USB so USB VBUS cannot keep the board powered. Cold-reboot
-   the 1541 and then reconnect USB.
+3. Ensure UB3 cannot receive USB 5 V/VBUS during the restart: unplug UB3 USB,
+   use a data-only USB cable, or use a dedicated cable with only its red 5 V
+   conductor interrupted. Cold-reboot the 1541 and then reconnect USB if it
+   was unplugged.
 4. Read the selected startup ROM again and confirm that it persisted and that
    the drive still operates normally.
 
