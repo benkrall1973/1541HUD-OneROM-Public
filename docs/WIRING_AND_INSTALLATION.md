@@ -15,6 +15,12 @@ not interchangeable and can disrupt the drive.
 
 ## Choose the topology before wiring
 
+**First-time recommendation:** begin with the UB3-only row below: Control in
+the lower socket, X1 routed to the upper socket pin 20, and no optional
+SEL_A/SEL_B or X2 wiring. Prove normal drive operation and ROM selection first
+using the [First-Time UB3 Quick Start](FIRST_TIME_UB3_QUICKSTART.md). Add UB4
+and optional features only after that baseline succeeds.
+
 There are two supported Control arrangements, depending on whether a Monitor
 board is installed:
 
@@ -34,12 +40,14 @@ lower-socket Monitor image is distributed: it has no supported paired use case
 in this release and has not been separately hardware-qualified. Do not move
 the existing upper-socket Monitor image to the lower socket.
 
-## Installation reference photos
+## Installation reference photos: paired UB3 + UB4 and optional features
 
 The following are photographs of the qualified development/test installation.
-They illustrate the physical context only; use the pin tables and electrical
-rules below for actual connections. Temporary clip leads and the breadboard
-are validation equipment, not permanent-installation instructions.
+They are most useful after the UB3-only baseline has passed and you are adding
+UB4 or an optional feature. They illustrate the physical context only; use the
+pin tables and electrical rules below for actual connections. Temporary clip
+leads and the breadboard are validation equipment, not permanent-installation
+instructions.
 
 | Paired board placement | Temporary selector testing |
 | --- | --- |

@@ -29,10 +29,19 @@ not treat this as validation for different OneROM models, socket roles, or
 1541 board/mechanism variants. See [RELEASE_MANIFEST.md](RELEASE_MANIFEST.md)
 and [Beta testing](docs/BETA_TESTING.md) before changing firmware.
 
+**Hardware boundary:** this release is qualified for **Fire-24E RP2350**
+OneROM hardware only. No newer or other OneROM model is supported or qualified
+unless a separately published image explicitly says so.
+
 ## Start here
 
-1. Read [wiring and installation](docs/WIRING_AND_INSTALLATION.md) before
-   opening the drive or connecting USB.
+For a first installation, begin with **one UB3 Fire-24E board**, no UB4, and
+no optional IEC-selector or write-protect wiring. Follow the
+[First-Time UB3 Quick Start](docs/FIRST_TIME_UB3_QUICKSTART.md) to prove normal
+drive operation, ROM selection, and cold-reboot persistence before adding more
+hardware or wiring.
+
+1. Read the [First-Time UB3 Quick Start](docs/FIRST_TIME_UB3_QUICKSTART.md).
 2. Confirm compatibility and ROM licensing in
    [Compatibility, Limitations, and ROM Licensing](docs/COMPATIBILITY_AND_LIMITATIONS.md).
 3. Read the [hardware and use disclaimer](DISCLAIMER.md).
@@ -40,6 +49,10 @@ and [Beta testing](docs/BETA_TESTING.md) before changing firmware.
 5. Follow [flashing and recovery](docs/FLASHING.md) one board at a time.
 6. Read [beta testing](docs/BETA_TESTING.md) and install 1541HUD and/or the
    C64 configurator after firmware validation.
+
+The [wiring and installation guide](docs/WIRING_AND_INSTALLATION.md) remains
+the source of truth for socket placement, X1, electrical rules, and later
+optional features. The reference photos below remain in their existing places.
 
 ## Optional control wiring
 
@@ -51,13 +64,15 @@ transistor circuit when write-protect override is not wanted. X1 is separate:
 it is required whenever UB3 must serve both halves of the 1541 ROM address
 range.
 
-## Installation photos
+## Reference photos: paired UB3 + UB4 installation
 
-These photographs show the hardware-qualified development/test installation.
-They are reference examples, not a substitute for the pinout and electrical
-rules in the [wiring guide](docs/WIRING_AND_INSTALLATION.md). In particular,
-the IC test clips are temporary validation tools; do not treat their placement
-or wire colours as a universal 1541 wiring standard.
+These photographs belong to the **later, paired UB3 + UB4** installation, not
+the single-UB3 first-time path. Refer to them when adding UB4 or optional
+features after the Quick Start baseline is working. They are reference examples,
+not a substitute for the pinout and electrical rules in the
+[wiring guide](docs/WIRING_AND_INSTALLATION.md). In particular, the IC test
+clips are temporary validation tools; do not treat their placement or wire
+colours as a universal 1541 wiring standard.
 
 | Paired OneROM installation | Temporary IEC-selector verification |
 | --- | --- |

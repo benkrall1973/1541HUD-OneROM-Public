@@ -20,6 +20,8 @@ installed, UB4 monitoring.
 
 - This release supports Fire-24E RP2350 hardware only. Do not flash it to a
   different OneROM model without a separately qualified image.
+- Compatibility with newer or other OneROM hardware revisions is unknown. A
+  Fire-24E image is not an implied test or approval for another board.
 - The published Original-ROM-only UB3 V0.8.0.17 image was hardware-tested in
   the paired Fire-24E lower-socket installation. It is not a universal
   qualification for a different 1541 board/mechanism or socket role.

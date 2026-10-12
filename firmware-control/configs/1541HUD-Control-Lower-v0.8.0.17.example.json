@@ -10,5 +10,5 @@
     {"type":"multi","roms":[{"description":"Lower C000 ROM","file":"https://www.zimmers.net/anonftp/pub/cbm/firmware/drives/new/1541/1541-c000.325302-01.bin","type":"2364","cs1":"active_low"},{"label":"1541 ONEROM BOOTLOADER","description":"Upper E000 ROM","file":"firmware-control/bootloader/1541-OneROM-Bootloader-Universal-v1.1.0.bin","type":"2364","cs1":"active_low"}]},
     {"type":"multi","roms":[{"description":"Lower C000 ROM","file":"https://www.zimmers.net/anonftp/pub/cbm/firmware/drives/new/1541/1541-c000.325302-01.bin","type":"2364","cs1":"active_low"},{"label":"ORIGINAL","description":"Upper E000 ROM","file":"https://www.zimmers.net/anonftp/pub/cbm/firmware/drives/new/1541/1541-e000.901229-05.bin","type":"2364","cs1":"active_low"}]}
   ],
-  "notes": "LOWER SOCKET / UB3: slots 0 and 1 are reserved for USB and Host-Control plugins. ROM slot 1 is the first selectable startup ROM. No JiffyDOS or private ROM input is included. Add only ROM images you are permitted to use."
+  "notes": "LOWER SOCKET / UB3: rom_sets entries 0 and 1 are the USB and Host-Control plugins and are not selectable ROM choices. The selectable startup-ROM entries begin at rom_sets entry 2 (the OneROM bootloader) and entry 3 (ORIGINAL). No JiffyDOS or private ROM input is included. Add only ROM images you are permitted to use."
 }
