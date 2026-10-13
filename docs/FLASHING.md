@@ -8,6 +8,7 @@ USB serial; a remembered COM number is not board identity.
 
 Use the supplied raw `.bin` files only with OneROM CLI's `program` command.
 Do not drag a `.bin` onto a BOOTSEL mass-storage volume or rename it to `.uf2`.
+The supplied UB3 `.uf2` is the only image intended for BOOTSEL drag-and-drop.
 
 ## Flash UB3 Control
 
@@ -28,6 +29,13 @@ installation before being treated as a release baseline.
 
 5. Reconnect normally. Confirm ROM listing, a valid ROM/IEC save, and a
    cold-reboot readback.
+
+### UB3 BOOTSEL alternative
+
+With UB3 intentionally in BOOTSEL mode, verify and copy
+`firmware-control/releases/onerom-1541HUD-Control-Lower-v0.8.0.17-original-only-fire-24-e-rp2350.uf2`
+to its RP2350 mass-storage volume. The UF2 contains the same Original-ROM-only
+image as the CLI BIN. It is for **UB3 lower-socket Control only**, not UB4.
 
 To create a custom Control image, follow `firmware-control/README.md` and use
 only ROMs you are authorized to use.
