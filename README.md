@@ -170,3 +170,5 @@ in [RELEASE_MANIFEST.md](RELEASE_MANIFEST.md).
 
 Original project material is released under the [MIT License](LICENSE).
 Release-package changes are tracked in [CHANGELOG.md](CHANGELOG.md).
+<img width="1120" height="740" alt="image" src="https://github.com/user-attachments/assets/1a7eaba7-5027-4ee7-87d2-44c3deb81dca" />
+
