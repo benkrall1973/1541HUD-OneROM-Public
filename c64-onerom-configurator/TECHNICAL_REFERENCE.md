@@ -5,11 +5,21 @@ Control settings. It provides ROM-slot discovery/selection and IEC-address
 control using the OneROM protocol. It obtains slot names from the Control image
 metadata rather than deriving labels from ROM URLs.
 
+The configurator and 1541HUD use the same principle: the installed UB3 image
+is authoritative. An original-ROM-only configuration should present one
+selectable ROM, while a custom image can expose more. If the list is wrong,
+verify the UB3 Control image and its USB connection before assuming that the
+C64 program has created or lost ROM slots.
+
 The release preserves the established quit paths and the temporary IEC-address
 workflow. Those flows are intentionally not changed in this package. After a
 setting change, verify it through the configurator or 1541HUD and then perform
 a cold 1541 reboot with UB3 USB VBUS absent to prove the saved startup state
 was reread.
+
+For that cold-reboot test, UB3 must lose USB VBUS as well as 1541 power.
+Use a data-only USB cable or otherwise isolate USB 5 V if needed; otherwise
+UB3 can remain powered and skip its normal startup read of the saved setting.
 
 The configurator is not a ROM image distributor and contains no licensed DOS
 replacement. It requires a compatible UB3 V0.8 Control image with the USB and

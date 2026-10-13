@@ -25,6 +25,12 @@ The Control endpoint supplies `ROMLIST` for image-defined slot metadata,
 wait for and parse the firmware reply, then read back and cold-reboot verify;
 serial transmission alone does not establish persistence.
 
+`ROMLIST` is the authoritative ROM inventory. A compatible V0.8.0.14 HUD or
+C64 Configurator requests the list and then reads individual `ROMSLOT` records
+to show only the slots in the installed UB3 image. An original-ROM-only image
+therefore reports one selectable ROM; the software must not invent extra slots
+from an old fixed menu.
+
 The patched V8 base includes a narrow capture-idle yield integration so the USB
 plugin can enter exclusive flash mode for NV writes. Stock V8 plus the plugins
 is not an equivalent Control assembly for this use case.
@@ -38,6 +44,12 @@ those selector lines HIGH. The valid mapping is 8 = LOW/LOW, 9 = INPUT/LOW,
 to address 8. This is an optional feature: without the selector wires, retain
 the 1541's fixed J1/J2 strap address and treat `ROMIEC` as saved state only,
 not a physical-address change.
+
+For a saved IEC address to take effect, UB3 must perform a genuine cold start
+and reread NV2. USB VBUS can keep UB3 powered when the 1541 is switched off,
+so use a data-only USB cable or remove/cut the USB 5 V path to UB3 if the
+installation requires a cold-reboot address change. This is a startup-state
+requirement, not a claim that USB 5 V damages the board.
 
 Write-protect override is an optional hardware function coupled to the
 installation's validated transistor interface. If its X2/GPIO8 transistor
