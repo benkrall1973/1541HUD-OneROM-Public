@@ -117,7 +117,13 @@ unreadable protection tracks may not produce enough valid evidence; the HUD
 will hold the last confirmed value or report RPM as unavailable rather than
 inventing a number.
 
-## 1541HUD V0.8.0.13 screenshots
+## 1541HUD reference screenshots
+
+These screenshots are from V0.8.0.13 and illustrate the core dashboard and
+Control wiring reminders. The current distributable is V0.8.0.14; its RPM and
+timing-card additions may make parts of the display differ. Verify the exact
+HUD version from [RELEASE_MANIFEST.md](RELEASE_MANIFEST.md), not from a
+screenshot.
 
 The Windows HUD combines passive UB4 evidence with confirmed UB3 Control
 operations. The Control-feature checkbox card visibly reminds the operator

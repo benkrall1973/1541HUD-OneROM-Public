@@ -44,6 +44,8 @@ private-repository history are intentionally not duplicated here.
   checksum, obsolete-filename, and source-allowlist checks.
 - Made package trust-boundary wording branch-neutral so the canonical package
   can be mirrored consistently on the default branch.
+- Clarified that V0.8.0.13 images are reference screenshots, not the current
+  HUD version, and added the release-administration checklist.
 
 ### Known qualification boundary
 

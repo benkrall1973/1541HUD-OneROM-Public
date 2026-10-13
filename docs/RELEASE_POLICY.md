@@ -23,3 +23,7 @@ redistribution rights have been confirmed.
 
 The private `1541HUD-OneROM-Private` repository remains the source of truth
 for source code, patches, rebuild instructions, and engineering records.
+
+Repository settings and release signing are external to the tracked files;
+complete [`RELEASE_ADMIN_CHECKLIST.md`](RELEASE_ADMIN_CHECKLIST.md) before
+promoting this package beyond public beta.
