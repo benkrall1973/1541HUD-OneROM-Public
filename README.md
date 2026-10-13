@@ -9,17 +9,17 @@ checksum with an engineering result.
 
 ## Release status and trust boundary
 
-This branch is a **public beta package**, not an immutable signed release.
+This is a **public beta package**, not an immutable signed release.
 The included SHA-256 manifests verify that a downloaded file matches the file
 recorded in this repository revision; they do **not** authenticate the publisher
-or prove that a mutable branch has not changed. The current package includes
+or prove that a mutable branch has not changed. This package includes
 unsigned 1541HUD Windows executables and firmware artifacts.
 
 Use the package only for evaluation on hardware you are prepared to recover.
 For a promoted release, obtain the artifact from a GitHub Release whose
 protected tag and checksum manifest are signed, then follow
 [release verification](docs/RELEASE_VERIFICATION.md). Until that exists, do
-not treat this branch as a production distribution channel.
+not treat it as a production distribution channel.
 
 ## What belongs here
 

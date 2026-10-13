@@ -3,7 +3,7 @@
 ## Supported scope
 
 This repository distributes evaluation firmware, binaries, and documentation
-for vintage-hardware modification. The current `v8.0` branch is not a signed
+for vintage-hardware modification. The current public-beta package is not a signed
 production release; see `docs/RELEASE_VERIFICATION.md` before using an artifact.
 
 ## Reporting a vulnerability

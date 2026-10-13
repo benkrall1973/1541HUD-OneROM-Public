@@ -1,10 +1,10 @@
 # Release Verification and Provenance
 
-## Current branch: evaluation only
+## Current package: evaluation only
 
-The `v8.0` branch is a mutable public-beta snapshot. Its `SHA256SUMS.txt` file
+This public-beta package is distributed from mutable branches. Its `SHA256SUMS.txt` file
 is useful for detecting a damaged or incomplete download, but a checksum stored
-beside a binary does not authenticate who supplied either file. The branch does
+beside a binary does not authenticate who supplied either file. The package does
 not currently publish signed tags, detached checksum signatures, attestations,
 or a reproducible public build.
 
@@ -14,7 +14,7 @@ familiar. The included `onerom-v0.5.0.exe` is separately Authenticode-signed by
 its publisher, but that does not authenticate the firmware or HUD artifacts in
 this repository.
 
-Do not use this branch as a production firmware distribution channel. Use it
+Do not use this package as a production firmware distribution channel. Use it
 only for controlled evaluation with a recovery plan and a sacrificial disk.
 
 ## Verifying a promoted release

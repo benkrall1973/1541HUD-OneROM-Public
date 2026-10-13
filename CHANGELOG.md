@@ -42,6 +42,8 @@ private-repository history are intentionally not duplicated here.
 - Restored approved Zimmers ROM URLs for the convenient default build path,
   while retaining a documented local-input verification path and automated
   checksum, obsolete-filename, and source-allowlist checks.
+- Made package trust-boundary wording branch-neutral so the canonical package
+  can be mirrored consistently on the default branch.
 
 ### Known qualification boundary
 
