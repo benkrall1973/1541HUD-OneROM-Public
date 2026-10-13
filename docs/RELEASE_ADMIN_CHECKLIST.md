@@ -6,10 +6,16 @@ promoted release until every applicable item is complete.
 
 ## GitHub repository settings
 
-- Protect `main` and the release branch: require pull requests, required status
-  checks, and no force pushes or branch deletion.
-- Require the `Release verification` GitHub Actions workflow to pass before a
-  merge.
+- Protect `main` and the release branch: require pull requests and block force
+  pushes and branch deletion.
+- The current repository ruleset does not require the `Release verification`
+  check because GitHub did not match its reported pull-request check name to
+  the selected ruleset context. Until that context is successfully validated
+  on a live pull request, treat a successful `Release verification` Actions
+  run as a mandatory manual merge gate. Do not add a status-check requirement
+  merely because its displayed label looks similar.
+- When a required status-check context has been validated on a live pull
+  request, enable it in the ruleset and re-test the protected merge path.
 - Restrict who can bypass branch protections and who can create protected tags.
 - Create a GitHub Release from the reviewed, signed tag; do not distribute a
   mutable branch URL as the promoted artifact location.

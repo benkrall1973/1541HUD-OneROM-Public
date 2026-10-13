@@ -11,7 +11,8 @@ jobs:
   verify:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
+      # actions/checkout v4, pinned to its official v4 tag commit.
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
       - name: Verify package integrity and manifest policy
         shell: pwsh
         run: ./tools/verify-release.ps1
