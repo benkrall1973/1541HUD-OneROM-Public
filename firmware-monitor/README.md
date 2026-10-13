@@ -3,6 +3,11 @@
 `onerom-1541HUD-Monitor-Upper-v0.8.0.14-fire-24-e-rp2350.bin` is the complete
 1541HUD UB4 Monitor image for a Fire-24E RP2350 OneROM.
 
+`onerom-1541HUD-Monitor-Upper-v0.8.0.14-fire-24-e-rp2350.uf2` packages that
+same complete image for the RP2350 BOOTSEL mass-storage loader. Use the `.bin`
+with OneROM CLI during normal USB operation. Use the `.uf2` only when UB4 has
+been intentionally placed in BOOTSEL mode; do not rename the BIN file to UF2.
+
 ## Hardware role
 
 - Install this image only on **UB4**, in the **upper 1541 ROM socket**.
@@ -17,7 +22,8 @@ composition JSON to flash it.
 
 ## Integrity
 
-Verify the file against [SHA256SUMS.txt](SHA256SUMS.txt) before flashing.
+Verify the BIN or UF2 file against [SHA256SUMS.txt](SHA256SUMS.txt) before
+flashing.
 
 Flashing and post-flash checks are documented in
 [`../docs/FLASHING.md`](../docs/FLASHING.md). Socket placement and USB-power

@@ -56,6 +56,14 @@ only ROMs you are authorized to use.
    off and the motor must not run merely because USB is present.
 5. Connect 1541HUD and verify live telemetry during real drive activity.
 
+### UB4 BOOTSEL alternative
+
+With UB4 intentionally in BOOTSEL mode, verify and copy
+`firmware-monitor/onerom-1541HUD-Monitor-Upper-v0.8.0.14-fire-24-e-rp2350.uf2`
+to its RP2350 mass-storage volume. The UF2 contains the same V0.8.0.14 passive
+Monitor image as the CLI BIN. It is for **UB4 upper-socket Monitor only**, not
+UB3.
+
 ## Recovery
 
 - **`Access is denied` / port busy:** close the program that owns the port;
