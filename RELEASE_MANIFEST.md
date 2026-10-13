@@ -31,6 +31,19 @@ Compare the displayed hash with the exact path in `SHA256SUMS.txt`. A checksum
 proves file identity, not that a file is appropriate for the board/socket in
 front of you.
 
+### Authentication status
+
+The current V0.8 public-beta branch has no signed Git tag, detached checksum
+signature, release attestation, or reproducible public build. Its manifests
+therefore provide accidental-corruption detection only; they do not establish
+publisher authenticity. The bundled OneROM CLI is Authenticode-signed by its
+publisher, but the 1541HUD executables are not Authenticode-signed.
+
+Treat the current branch as an evaluation snapshot. A promoted release must be
+published as a GitHub Release from a signed, protected tag and include a
+detached signature for its checksum manifest. See
+[`docs/RELEASE_VERIFICATION.md`](docs/RELEASE_VERIFICATION.md).
+
 ## Release boundaries
 
 This repository contains distributable artifacts, safe configuration examples,

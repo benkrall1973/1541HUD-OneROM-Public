@@ -21,11 +21,11 @@ Open PowerShell at the **repository root** (the directory containing
 `firmware-control/`) and run:
 
 ```powershell
-.\onerom-cli\onerom-v0.5.0.exe firmware build `
-  --config .\configs\1541HUD-Control-Lower-v0.8.0.17.example.json `
+.\firmware-control\onerom-cli\onerom-v0.5.0.exe firmware build `
+  --config .\firmware-control\configs\1541HUD-Control-Lower-v0.8.0.17.example.json `
   --board fire-24-e `
-  --base-firmware .\base-firmware\onerom-rp235x-1541HUD-v0.8.0-patched.bin `
-  --output .\output\my-1541HUD-Control-Lower.bin `
+  --base-firmware .\firmware-control\base-firmware\onerom-rp235x-1541HUD-v0.8.0-patched.bin `
+  --output .\firmware-control\output\my-1541HUD-Control-Lower.bin `
   --force
 ```
 
@@ -35,6 +35,16 @@ current working directory.
 
 Create `firmware-control/output` before running the command if the CLI does
 not create it on the installed version.
+
+### ROM-input integrity boundary
+
+The example manifests refer to upstream Original DOS ROM URLs. They are
+convenient examples, not pinned or authenticated build inputs: this repository
+does not redistribute those ROM files and cannot establish their identity at
+download time. Before composing custom firmware, download each ROM yourself,
+record its SHA-256 from a source you trust, and replace the URL in a private
+copy of the manifest with the verified local file. Do not treat a custom image
+made from a live URL as reproducible or release-qualified.
 
 The lower example is the relevant one for UB3 in the standard 1541HUD setup.
 The upper example is supplied for custom hardware layouts; do not use it for

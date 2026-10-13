@@ -7,6 +7,20 @@ do not treat every file as universally hardware-validated merely because it is
 in a repository. That would be a spectacularly efficient way to confuse a
 checksum with an engineering result.
 
+## Release status and trust boundary
+
+This branch is a **public beta package**, not an immutable signed release.
+The included SHA-256 manifests verify that a downloaded file matches the file
+recorded in this repository revision; they do **not** authenticate the publisher
+or prove that a mutable branch has not changed. The current package includes
+unsigned 1541HUD Windows executables and firmware artifacts.
+
+Use the package only for evaluation on hardware you are prepared to recover.
+For a promoted release, obtain the artifact from a GitHub Release whose
+protected tag and checksum manifest are signed, then follow
+[release verification](docs/RELEASE_VERIFICATION.md). Until that exists, do
+not treat this branch as a production distribution channel.
+
 ## What belongs here
 
 - validated UB3 Control and UB4 Monitor firmware images;
@@ -33,8 +47,10 @@ validated, do not treat any artifact in this repository as flash-ready.
    [Compatibility, Limitations, and ROM Licensing](docs/COMPATIBILITY_AND_LIMITATIONS.md).
 3. Read the [hardware and use disclaimer](DISCLAIMER.md).
 4. Verify the exact artifact using [SHA256SUMS.txt](SHA256SUMS.txt).
-5. Follow [flashing and recovery](docs/FLASHING.md) one board at a time.
-6. Install 1541HUD and/or the C64 configurator after firmware validation.
+5. Read [release verification](docs/RELEASE_VERIFICATION.md) to understand what
+   that checksum can and cannot prove.
+6. Follow [flashing and recovery](docs/FLASHING.md) one board at a time.
+7. Install 1541HUD and/or the C64 configurator after firmware validation.
 
 ## Optional control wiring
 

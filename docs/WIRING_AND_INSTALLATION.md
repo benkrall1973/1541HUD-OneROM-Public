@@ -80,7 +80,7 @@ installation procedure.
 | IEC selector A (bit 0) | GPIO25 / `SEL_A` | UC3 (6522) pin 15 | Drive LOW or release INPUT only; never drive HIGH. |
 | IEC selector B (bit 1) | GPIO24 / `SEL_B` | UC3 (6522) pin 16 | Drive LOW or release INPUT only; never drive HIGH. |
 | Upper/lower ROM select extension | X1 | pin 20 of the *other* 2364 ROM socket | Insulated fly-lead or removable Dupont lead; see socket table below. |
-| Write-protect override control | X2 / GPIO8 | 5.1 kΩ resistor, then NPN base | Never connect X2 directly to a 1541 logic node. |
+| Write-protect override control | X2 / GPIO8 | 5.1 kOhm resistor, then NPN base | Never connect X2 directly to a 1541 logic node. |
 | Write-protect override pull-down | NPN collector | P6 pin 12 | The only 1541 WP node driven by UB3. |
 | Write-protect override return | NPN emitter | 1541 ground | Common ground with the OneROM/drive. |
 
@@ -159,9 +159,11 @@ intended pin-20 net before power is applied. Do not bridge adjacent DIP pins.
    connection. Confirm IC orientation and socket keying before removal.
 4. Install UB3 only in the lower ROM socket and UB4 only in the upper ROM
    socket. Inspect for bent pins, lifted pads, bridges, and strained leads.
-5. Use the documented monitor wiring for your specific UB4 hardware revision.
-   The passive Monitor firmware does not magically make an unknown probe lead
-   safe. Verify every lead by continuity before powering the drive.
+5. Do not connect UB4 probe leads unless you already possess a
+   board/mechanism-specific, electrically reviewed wiring record for that exact
+   installation. This public package does not publish a universal Monitor
+   probe map. The passive Monitor firmware does not make an unknown probe lead
+   safe. Verify every approved lead by continuity before powering the drive.
 
 ## USB and power rules
 
@@ -169,10 +171,11 @@ UB3 and UB4 enumerate as two separate USB CDC devices. Assign them in 1541HUD
 by their OneROM USB serial numbers, not the Windows COM number; COM numbers
 can change after reconnect.
 
-For UB3, use a data-only USB connection when a 1541 power cycle must make the
-board reread saved NV settings. USB 5 V can keep UB3 running while the 1541 is
-restarted, so it does not perform its startup NV read. This is a sequencing
-rule, not a claim that 5 V damages the board.
+For UB3, disconnect or block **USB VBUS (5 V)** when a 1541 power cycle must
+make the board reread saved NV settings. "Data-only" is ambiguous in USB-cable
+marketing, so do not rely on that label. USB 5 V can keep UB3 running while
+the 1541 is restarted, so it does not perform its startup NV read. This is a
+sequencing rule, not a claim that 5 V damages the board.
 
 Before connecting USB to either board, confirm the 1541 starts normally with
 the installed images. With UB4 connected, the drive must not show a solid red
@@ -190,9 +193,9 @@ sensor-side WP signal low so the drive appears writable. It is not a permanent
 setting and returns OFF after an actual OneROM reset or power cycle.
 
 ```text
-UB3 X2 / GPIO8 ── 5.1 kΩ ── base  KSC2383YTA NPN
-1541 ground ───────────────── emitter
-1541 P6 pin 12 ────────────── collector
+UB3 X2 / GPIO8 -- 5.1 kOhm -- base      KSC2383YTA NPN
+1541 ground ---------------- emitter
+1541 P6 pin 12 -------------- collector
 ```
 
 ### Write-protect BOM
@@ -200,7 +203,7 @@ UB3 X2 / GPIO8 ── 5.1 kΩ ── base  KSC2383YTA NPN
 | Qty | Part | Requirement / purpose |
 | --- | --- | --- |
 | 1 | KSC2383YTA | NPN transistor used as the low-side WP pull-down. |
-| 1 | 5.1 kΩ resistor | Series base resistor; 1/8 W or 1/4 W is suitable. |
+| 1 | 5.1 kOhm resistor | Series base resistor; 1/8 W or 1/4 W is suitable. |
 | 3 | insulated hookup wires | X2-to-resistor, collector-to-P6-12, and emitter-to-ground. |
 | as needed | heat-shrink / insulation | Prevent shorts and lead fatigue. |
 
@@ -228,9 +231,12 @@ sacrificial disk for any actual write test.
 The UB4 firmware captures motor, phase/step, write-protect, write-gate,
 density, header, RPM, and SYNC evidence. Its probe-lead destinations are not
 a universal 1541 pin table: they depend on PCB assembly, mechanism, harness,
-and installed monitor hardware. This release intentionally does not invent
-those destinations. Record each actual UB4 pad/signal label, IC designator and
-pin, continuity result, idle voltage, and active polarity before installation.
+and installed monitor hardware. Consequently, this public package is not a
+complete UB4 probe-installation guide and the Monitor is only supported where
+a board/mechanism-specific wiring record has already been reviewed. Do not
+guess at probe locations from photographs. Record each actual UB4 pad/signal
+label, IC designator and pin, continuity result, idle voltage, and active
+polarity before installation.
 
 ## Initial acceptance
 
@@ -242,5 +248,5 @@ pin, continuity result, idle voltage, and active polarity before installation.
    confirm the applicable values persist.
 4. Install/connect UB4. Confirm no red LED/motor fault, then verify live
    Monitor activity in 1541HUD.
-5. If the optional write-protect circuit is installed, test it physically—not
+5. If the optional write-protect circuit is installed, test it physically, not
    only by observing a successful USB command response.

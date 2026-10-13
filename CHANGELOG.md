@@ -32,6 +32,11 @@ private-repository history are intentionally not duplicated here.
 - Documented RPM behavior on seeks, unreadable media, and intentionally
   nonstandard protection tracks, plus the related SYNC/density card
   calculations.
+- Corrected the UB4 CLI flashing filename to V0.8.0.14 and corrected the UB3
+  custom-build command paths.
+- Documented the unsigned/mutable-branch trust boundary, upstream-ROM input
+  boundary, release-signing requirement, and the lack of a universal UB4 probe
+  installation map.
 
 ### Known qualification boundary
 

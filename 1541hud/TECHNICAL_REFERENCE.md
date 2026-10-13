@@ -9,7 +9,8 @@ The application discovers separate CDC devices and stores role bindings in its
 parameter JSON. Assign Control and Monitor by stable OneROM USB serial number,
 not Windows COM port. A COM number is an endpoint that Windows may reassign.
 
-Control operations use request → firmware reply → readback → reboot verification.
+Control operations use: request -> firmware reply -> readback -> reboot
+verification.
 The ROM picker is built from `ROMLIST` metadata supplied by the Control image;
 it must not assume a fixed number of slots. Monitor connection/reset clears
 stale observation state so old motor, header, RPM, or SYNC evidence is not
