@@ -66,7 +66,7 @@ or wire colours as a universal 1541 wiring standard.
 
 ## Components
 
-- `firmware-monitor/` contains the complete UB4 V0.8.0.15 passive Monitor
+- `firmware-monitor/` contains the complete UB4 V0.8.0.14 passive Monitor
   image and its checksum. It is upper-socket-only and must be paired with a
   compatible UB3 Control installation.
 - `firmware-control/` contains the UB3 custom-composition kit: patched V8
@@ -74,8 +74,30 @@ or wire colours as a universal 1541 wiring standard.
   manifests.
 - `c64-onerom-configurator/` contains the V0.8.0.01 C64 `.PRG` and `.d64`
   release files.
-- `1541hud/` contains the portable Windows V0.8.0.13 application and its
+- `1541hud/` contains the portable Windows V0.8.0.14 application and its
   checksum.
+
+## V0.8.0.14 RPM measurement
+
+V0.8.0.14 adds passive, live RPM measurement while normal disk software is
+running. It does not write a test sector, require a test disk, or add a spindle
+sensor. After the Monitor sees a checksum-valid physical header, it uses that
+header only to establish the standard density-zone geometry. It then timestamps
+raw SYNC marks over two complete disk revolutions to calculate RPM.
+
+The timer does not wait for the same header or sector to return. Standard 1541
+geometry supplies the revolution boundary: 42, 38, 36, or 34 SYNC marks per
+revolution for density zones 3 through 0 respectively. The measured RPM also
+feeds the HUD's expected-SYNC, SYNC-per-revolution, density-validation, and
+card-detail calculations.
+
+During a seek or unreadable interval, V14 retains the last confirmed RPM rather
+than showing an incomplete sample. When the motor stops, the RPM card shows
+`--.--`. The method is intended for standard readable GCR tracks, including
+many commercial disks with protection elsewhere. Deliberately nonstandard or
+unreadable protection tracks may not produce enough valid evidence; the HUD
+will hold the last confirmed value or report RPM as unavailable rather than
+inventing a number.
 
 ## 1541HUD V0.8.0.13 screenshots
 

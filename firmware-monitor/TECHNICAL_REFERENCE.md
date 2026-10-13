@@ -34,11 +34,22 @@ establishes the density zone; the firmware then measures two complete
 revolutions and emits the resulting `RPM` record. The paired V0.8.0.14 HUD
 uses this record as its primary spindle value.
 
+The header is used as the readable density/geometry reference; it is not timed
+until the same sector returns. The standard zone's repeating SYNC pattern
+defines the complete-revolution boundaries, so the measurement works passively
+during ordinary reads without a sensor, test disk, or disk write.
+
 The firmware rejects incomplete timing windows. It retains the last confirmed
 RPM while the head is stepping or the disk cannot provide a usable header, and
 clears RPM when motor telemetry reports OFF. SYNC count/rate, header activity,
 capture rate, and density are retained as supporting diagnostics rather than
 being allowed to manufacture a replacement RPM value.
+
+Normal readable GCR tracks are the supported case. Copy-protection tracks that
+use invalid headers, weak bits, or deliberately nonstandard geometry may not
+provide a new confirmed sample. Holding the last valid RPM or clearing it when
+appropriate is intentional; the Monitor must not manufacture a value from
+insufficient evidence.
 
 This behavior was exercised with normal disk reads and 1541 Diagnostic Cart
 and Zibri speed tests. Track changes can momentarily retain the prior confirmed

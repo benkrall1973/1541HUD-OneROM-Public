@@ -29,3 +29,11 @@ This is the hardware-tested V0.8.0.14 Monitor assembly. It uses raw hardware
 SYNC timing across two complete revolutions for stable RPM, holds the last
 confirmed RPM through a head seek, and clears it when motor telemetry turns
 off. Use it with the matching 1541HUD V0.8.0.14 host release.
+
+The RPM feature is passive: it operates while ordinary disk software is
+running and does not write to the disk, require a test disk, or use an external
+sensor. A checksum-valid header supplies the density zone; the firmware then
+counts and times raw SYNC marks, rather than waiting for one particular sector
+header to repeat. Standard readable GCR tracks are supported. A deliberately
+nonstandard or unreadable protection track can leave RPM held or unavailable,
+which is preferable to publishing a false speed.

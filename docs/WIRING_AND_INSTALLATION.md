@@ -29,7 +29,7 @@ reach pin 20 of the opposite ROM socket.
 
 With UB4 installed, the topology is not interchangeable. UB3 must remain in
 the lower socket because it is the ROM-serving Control board, and the supplied
-UB4 V0.8.0.15 Monitor image must be installed in the upper socket. No
+UB4 V0.8.0.14 Monitor image must be installed in the upper socket. No
 lower-socket Monitor image is distributed: it has no supported paired use case
 in this release and has not been separately hardware-qualified. Do not move
 the existing upper-socket Monitor image to the lower socket.

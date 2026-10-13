@@ -4,7 +4,7 @@
 
 This package targets a Fire-24E RP2350 paired-OneROM 1541 installation:
 UB3 Control in the lower ROM socket and UB4 passive Monitor in the upper ROM
-socket. It is designed as a coupled V0.8 system with 1541HUD V0.8.0.13.
+socket. It is designed as a coupled V0.8 system with 1541HUD V0.8.0.14.
 
 UB3 provides ROM service, ROM selection, boot IEC address, persistent NV
 state, and write-protect override. UB4 provides passive telemetry only. The
@@ -23,7 +23,7 @@ installed, UB4 monitoring.
 - The published Original-ROM-only UB3 image has passed composition/inspection,
   but is a recipient-installation candidate rather than a universal
   hardware-qualified baseline. Test it before relying on it.
-- The UB4 V0.8.0.15 Monitor assembly was hardware-tested in the paired
+- The UB4 V0.8.0.14 Monitor assembly was hardware-tested in the paired
   installation. Monitor probe wiring remains hardware-specific and must be
   validated on each 1541 board/mechanism.
 - Control persistence depends on the V8 idle-yield integration in the supplied
@@ -33,6 +33,13 @@ installed, UB4 monitoring.
   saved IEC/ROM startup state.
 - The software displays confirmed Control replies and Monitor telemetry; it
   cannot prove a physical wiring change from a successful serial write alone.
+- V0.8.0.14 RPM is a passive measurement from standard readable GCR structure:
+  a valid header establishes density geometry and raw SYNC marks define two
+  timed revolutions. It does not require a sensor, test disk, or disk write.
+- Deliberately nonstandard, weak-bit, or unreadable copy-protection tracks may
+  not provide enough valid header/SYNC evidence for a confirmed RPM. In that
+  case the HUD holds the previous confirmed value or shows RPM unavailable; it
+  does not claim a guessed measurement.
 
 ## ROM and licensing rules
 

@@ -32,11 +32,22 @@ the disk-density zone, then times raw SYNC edges across two complete
 revolutions. This avoids the coarse count-window rounding that made a drive
 appear to jump between an exact nominal RPM and a visibly different value.
 
+The accepted header is a density/geometry gate, not the start marker for a
+"find this same sector again" measurement. On a normal 1541 track, the known
+SYNC-mark count for the identified zone defines each full revolution. This
+keeps the measurement passive during normal software operation: it requires no
+sensor, test disk, write, or special diagnostic program.
+
 During a seek, step sequence, or unreadable interval, the firmware holds the
 last confirmed RPM instead of publishing a partial timing window. When the
 motor stops, the RPM field clears to `--.--`. SYNC rate, SYNC/revolution,
 header rate, capture rate, sector coverage, density, and disk identity remain
 useful diagnostic cards, but they never overwrite the measured RPM.
+
+Standard readable GCR tracks are the intended coverage. A deliberately
+nonstandard, weak-bit, or unreadable protection track can lack the valid
+header/SYNC evidence required for a new result; the HUD holds the last
+confirmed RPM or reports it unavailable instead of guessing.
 
 The application processes every complete telemetry record. It may limit Canvas
 redraw frequency while the Monitor is producing high-rate traffic so USB
