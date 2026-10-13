@@ -1,5 +1,7 @@
 # 1541HUD OneROM — Public Releases
 
+1541HUD is a OneROM community project for Commodore 1541 owners who want easier ROM switching, USB control, and optional live drive-status monitoring. Start with a Windows interface, or use the C64 configuration tool as soon as you install one compatible UB3 OneROM board with your original drive ROM. Then migrate to a small Raspberry Pi touchscreen interface that sits on the drive. Add features as you go, including multiple ROMs, programmable drive addresses, write-protect control, and live telemetry such as motor activity, full- and half-track position, stepping activity, write status, disk density, headers, RPM, and SYNC activity. Firmware, setup guides, and testing notes are available on GitHub for builders and testers.
+
 This repository is the public distribution point for 1541HUD OneROM releases.
 It intentionally contains distributable artifacts and user documentation, not
 the private development tree. Each artifact has a stated qualification level;
