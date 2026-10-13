@@ -23,7 +23,7 @@ not treat this branch as a production distribution channel.
 
 ## What belongs here
 
-- validated UB3 Control and UB4 Monitor firmware images;
+- an UB3 Control composition candidate and a hardware-tested UB4 Monitor image;
 - the Windows 1541HUD application release;
 - C64 configurator release files;
 - checksums, wiring, flashing, and installation documentation; and
@@ -36,8 +36,10 @@ not treat this branch as a production distribution channel.
   experimental candidates; and
 - internal patch-development notes.
 
-The first public release is being assembled. Until a release is marked
-validated, do not treat any artifact in this repository as flash-ready.
+This public-beta package is still being prepared for a promoted release. The
+UB3 Control artifact is a candidate; do not treat it as flash-ready until it
+has been hardware-qualified for the recipient installation. UB4 is limited to
+the documented paired evaluation configuration and its wiring prerequisites.
 
 ## Start here
 

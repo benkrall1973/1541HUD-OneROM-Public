@@ -42,8 +42,8 @@ A correct hash cannot make a wrong image safe for the hardware in front of you.
 
 ## Custom Control builds
 
-The example Control manifests include live upstream ROM URLs. They are neither
-pinned nor authenticated by this package, and a custom output is not equivalent
-to a promoted release. Download ROM inputs yourself, retain their provenance
-and SHA-256 values, use verified local paths in a private manifest, and
-hardware-test the resulting firmware before flashing.
+The example Control manifests require local ROM paths. This package neither
+ships nor downloads those inputs. Obtain ROM inputs yourself, retain their
+provenance and SHA-256 values, keep them outside version control, and
+hardware-test the resulting firmware before flashing. A custom output is not
+equivalent to a promoted release.

@@ -6,5 +6,6 @@ firmware-control/output/
 
 # Never publish private ROM inputs or local settings
 roms/
+firmware-control/rom-inputs/*.bin
 *.local.json
 onerom_drive_bindings.json

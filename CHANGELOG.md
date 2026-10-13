@@ -37,6 +37,10 @@ private-repository history are intentionally not duplicated here.
 - Documented the unsigned/mutable-branch trust boundary, upstream-ROM input
   boundary, release-signing requirement, and the lack of a universal UB4 probe
   installation map.
+- Corrected the CLI BIN flashing workflow to use normal USB mode; BOOTSEL is
+  now reserved for the UF2 drag-and-drop alternative.
+- Replaced live ROM URLs with private local-input paths and added automated
+  checksum, obsolete-filename, and remote-ROM-input verification.
 
 ### Known qualification boundary
 

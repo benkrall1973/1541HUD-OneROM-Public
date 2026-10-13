@@ -38,13 +38,13 @@ not create it on the installed version.
 
 ### ROM-input integrity boundary
 
-The example manifests refer to upstream Original DOS ROM URLs. They are
-convenient examples, not pinned or authenticated build inputs: this repository
-does not redistribute those ROM files and cannot establish their identity at
-download time. Before composing custom firmware, download each ROM yourself,
-record its SHA-256 from a source you trust, and replace the URL in a private
-copy of the manifest with the verified local file. Do not treat a custom image
-made from a live URL as reproducible or release-qualified.
+The example manifests require local Original DOS ROM files from
+`firmware-control/rom-inputs/`; this repository does not redistribute them.
+Before composing custom firmware, obtain each ROM yourself, record its SHA-256
+from a source you trust, and place the verified file at the documented local
+path. Keep those inputs private. A custom image is not reproducible or
+release-qualified until its exact input provenance and hardware result have
+been recorded.
 
 The lower example is the relevant one for UB3 in the standard 1541HUD setup.
 The upper example is supplied for custom hardware layouts; do not use it for

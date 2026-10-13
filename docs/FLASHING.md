@@ -17,7 +17,7 @@ composition candidate. It must be hardware-qualified for the recipient's
 installation before being treated as a release baseline.
 
 1. Disconnect UB4 USB and power down the 1541 where practical.
-2. Put UB3 into BOOTSEL mode and connect it to the computer.
+2. Start UB3 in its normal USB firmware mode and connect it to the computer.
 3. From repository root, verify the image hash in `SHA256SUMS.txt`.
 4. Program and verify:
 
@@ -42,7 +42,7 @@ only ROMs you are authorized to use.
 
 ## Flash UB4 Monitor
 
-1. Put UB4 into BOOTSEL mode; UB3 is not the target.
+1. Start UB4 in its normal USB firmware mode; UB3 is not the target.
 2. Verify the Monitor image hash.
 3. From repository root, program and verify:
 
