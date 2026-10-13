@@ -39,8 +39,9 @@ private-repository history are intentionally not duplicated here.
   installation map.
 - Corrected the CLI BIN flashing workflow to use normal USB mode; BOOTSEL is
   now reserved for the UF2 drag-and-drop alternative.
-- Replaced live ROM URLs with private local-input paths and added automated
-  checksum, obsolete-filename, and remote-ROM-input verification.
+- Restored approved Zimmers ROM URLs for the convenient default build path,
+  while retaining a documented local-input verification path and automated
+  checksum, obsolete-filename, and source-allowlist checks.
 
 ### Known qualification boundary
 

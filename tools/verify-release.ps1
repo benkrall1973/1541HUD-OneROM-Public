@@ -22,12 +22,16 @@ try {
         $failures.Add('Flashing guide refers to obsolete UB4 V0.8.0.15.')
     }
 
+    $approvedRomUrls = @(
+        'https://www.zimmers.net/anonftp/pub/cbm/firmware/drives/new/1541/1541-c000.325302-01.bin',
+        'https://www.zimmers.net/anonftp/pub/cbm/firmware/drives/new/1541/1541-e000.901229-05.bin'
+    )
     Get-ChildItem 'firmware-control/configs' -Filter '*.json' | ForEach-Object {
         $config = Get-Content -Raw $_ | ConvertFrom-Json
         foreach ($set in $config.rom_sets) {
             foreach ($rom in $set.roms) {
-                if ($rom.file -match '^https?://') {
-                    $failures.Add("Remote ROM input in $($_.Name): $($rom.file)")
+                if ($rom.file -match '^https?://' -and $rom.file -notin $approvedRomUrls) {
+                    $failures.Add("Unapproved remote ROM input in $($_.Name): $($rom.file)")
                 }
             }
         }

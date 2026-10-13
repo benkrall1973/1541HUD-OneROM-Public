@@ -38,13 +38,15 @@ not create it on the installed version.
 
 ### ROM-input integrity boundary
 
-The example manifests require local Original DOS ROM files from
-`firmware-control/rom-inputs/`; this repository does not redistribute them.
-Before composing custom firmware, obtain each ROM yourself, record its SHA-256
-from a source you trust, and place the verified file at the documented local
-path. Keep those inputs private. A custom image is not reproducible or
-release-qualified until its exact input provenance and hardware result have
-been recorded.
+The default example manifests download Original DOS ROM files from the approved
+Zimmers URLs recorded in [`ROM_SOURCES.md`](ROM_SOURCES.md). This keeps the
+ordinary build path convenient, but those live URLs are not immutable build
+inputs. For an offline/reproducible build, download the files, verify their
+SHA-256 values in `ROM_SOURCES.md`, and use a private local copy of the
+manifest with `firmware-control/rom-inputs/` paths. Keep those local inputs out
+of version control.
+A custom image is not release-qualified until its exact input provenance and
+hardware result have been recorded.
 
 The lower example is the relevant one for UB3 in the standard 1541HUD setup.
 The upper example is supplied for custom hardware layouts; do not use it for

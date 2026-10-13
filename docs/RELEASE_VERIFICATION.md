@@ -42,8 +42,9 @@ A correct hash cannot make a wrong image safe for the hardware in front of you.
 
 ## Custom Control builds
 
-The example Control manifests require local ROM paths. This package neither
-ships nor downloads those inputs. Obtain ROM inputs yourself, retain their
-provenance and SHA-256 values, keep them outside version control, and
-hardware-test the resulting firmware before flashing. A custom output is not
-equivalent to a promoted release.
+The default Control manifests download ROM inputs from the approved Zimmers
+URLs listed in `firmware-control/ROM_SOURCES.md`. The automated release check
+allows only those exact HTTPS locations. For a reproducible custom build,
+download the inputs first, verify their SHA-256 values, use local paths in a
+private manifest, and hardware-test the result before flashing. A custom
+output is not equivalent to a promoted release.
