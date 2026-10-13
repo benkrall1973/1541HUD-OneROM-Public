@@ -52,7 +52,9 @@ the documented paired evaluation configuration and its wiring prerequisites.
 5. Read [release verification](docs/RELEASE_VERIFICATION.md) to understand what
    that checksum can and cannot prove.
 6. Follow [flashing and recovery](docs/FLASHING.md) one board at a time.
-7. Install 1541HUD and/or the C64 configurator after firmware validation.
+7. Check the [support and qualification matrix](docs/SUPPORT_MATRIX.md) and
+   the [FAQ](docs/FAQ.md) before choosing an artifact.
+8. Install 1541HUD and/or the C64 configurator after firmware validation.
 
 ## Optional control wiring
 
