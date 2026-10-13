@@ -4,7 +4,7 @@
 
 This package targets a Fire-24E RP2350 paired-OneROM 1541 installation:
 UB3 Control in the lower ROM socket and UB4 passive Monitor in the upper ROM
-socket. It is designed as a coupled V0.8 system with 1541HUD V0.8.0.13.
+socket. It is designed as a coupled V0.8 system with 1541HUD V0.8.0.14.
 
 UB3 provides ROM service, ROM selection, boot IEC address, persistent NV
 state, and write-protect override. UB4 provides passive telemetry only. The
@@ -20,22 +20,26 @@ installed, UB4 monitoring.
 
 - This release supports Fire-24E RP2350 hardware only. Do not flash it to a
   different OneROM model without a separately qualified image.
-- Compatibility with newer or other OneROM hardware revisions is unknown. A
-  Fire-24E image is not an implied test or approval for another board.
-- The published Original-ROM-only UB3 V0.8.0.17 image was hardware-tested in
-  the paired Fire-24E lower-socket installation. It is not a universal
-  qualification for a different 1541 board/mechanism or socket role.
-- The UB4 V0.8.0.08 Monitor assembly was hardware-tested in the paired
+- The published Original-ROM-only UB3 image has passed composition/inspection,
+  but is a recipient-installation candidate rather than a universal
+  hardware-qualified baseline. Test it before relying on it.
+- The UB4 V0.8.0.14 Monitor assembly was hardware-tested in the paired
   installation. Monitor probe wiring remains hardware-specific and must be
   validated on each 1541 board/mechanism.
 - Control persistence depends on the V8 idle-yield integration in the supplied
   patched Control base. Replacing that base with stock V8 can cause NV writes
   to stall or be rejected.
-- During a 1541 restart intended to reread saved IEC/ROM startup state, UB3
-  must receive no USB 5 V/VBUS. Unplug UB3 USB, use a data-only cable, or use
-  a dedicated cable with only its red 5 V/VBUS conductor interrupted.
+- UB3 USB VBUS must be absent during a 1541 restart that is intended to reread
+  saved IEC/ROM startup state.
 - The software displays confirmed Control replies and Monitor telemetry; it
   cannot prove a physical wiring change from a successful serial write alone.
+- V0.8.0.14 RPM is a passive measurement from standard readable GCR structure:
+  a valid header establishes density geometry and raw SYNC marks define two
+  timed revolutions. It does not require a sensor, test disk, or disk write.
+- Deliberately nonstandard, weak-bit, or unreadable copy-protection tracks may
+  not provide enough valid header/SYNC evidence for a confirmed RPM. In that
+  case the HUD holds the previous confirmed value or shows RPM unavailable; it
+  does not claim a guessed measurement.
 
 ## ROM and licensing rules
 

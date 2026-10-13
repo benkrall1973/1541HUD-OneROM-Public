@@ -7,9 +7,23 @@ do not treat every file as universally hardware-validated merely because it is
 in a repository. That would be a spectacularly efficient way to confuse a
 checksum with an engineering result.
 
+## Release status and trust boundary
+
+This is a **public beta package**, not an immutable signed release.
+The included SHA-256 manifests verify that a downloaded file matches the file
+recorded in this repository revision; they do **not** authenticate the publisher
+or prove that a mutable branch has not changed. This package includes
+unsigned 1541HUD Windows executables and firmware artifacts.
+
+Use the package only for evaluation on hardware you are prepared to recover.
+For a promoted release, obtain the artifact from a GitHub Release whose
+protected tag and checksum manifest are signed, then follow
+[release verification](docs/RELEASE_VERIFICATION.md). Until that exists, do
+not treat it as a production distribution channel.
+
 ## What belongs here
 
-- validated UB3 Control and UB4 Monitor firmware images;
+- an UB3 Control composition candidate and a hardware-tested UB4 Monitor image;
 - the Windows 1541HUD application release;
 - C64 configurator release files;
 - checksums, wiring, flashing, and installation documentation; and
@@ -22,37 +36,23 @@ checksum with an engineering result.
   experimental candidates; and
 - internal patch-development notes.
 
-This is a limited public beta. UB3 V0.8.0.17 Control and UB4 V0.8.0.08 Monitor
-were hardware-tested in the documented paired Fire-24E installation. The
-Windows/C64 applications may be evaluated within their documented scope. Do
-not treat this as validation for different OneROM models, socket roles, or
-1541 board/mechanism variants. See [RELEASE_MANIFEST.md](RELEASE_MANIFEST.md)
-and [Beta testing](docs/BETA_TESTING.md) before changing firmware.
-
-**Hardware boundary:** this release is qualified for **Fire-24E RP2350**
-OneROM hardware only. No newer or other OneROM model is supported or qualified
-unless a separately published image explicitly says so.
+This public-beta package is still being prepared for a promoted release. The
+UB3 Control artifact is a candidate; do not treat it as flash-ready until it
+has been hardware-qualified for the recipient installation. UB4 is limited to
+the documented paired evaluation configuration and its wiring prerequisites.
 
 ## Start here
 
-For a first installation, begin with **one UB3 Fire-24E board**, no UB4, and
-no optional IEC-selector or write-protect wiring. Follow the
-[First-Time UB3 Quick Start](docs/FIRST_TIME_UB3_QUICKSTART.md) to prove normal
-drive operation, ROM selection, and cold-reboot persistence before adding more
-hardware or wiring.
-
-1. Read the [First-Time UB3 Quick Start](docs/FIRST_TIME_UB3_QUICKSTART.md).
+1. Read [wiring and installation](docs/WIRING_AND_INSTALLATION.md) before
+   opening the drive or connecting USB.
 2. Confirm compatibility and ROM licensing in
    [Compatibility, Limitations, and ROM Licensing](docs/COMPATIBILITY_AND_LIMITATIONS.md).
 3. Read the [hardware and use disclaimer](DISCLAIMER.md).
 4. Verify the exact artifact using [SHA256SUMS.txt](SHA256SUMS.txt).
-5. Follow [flashing and recovery](docs/FLASHING.md) one board at a time.
-6. Read [beta testing](docs/BETA_TESTING.md) and install 1541HUD and/or the
-   C64 configurator after firmware validation.
-
-The [wiring and installation guide](docs/WIRING_AND_INSTALLATION.md) remains
-the source of truth for socket placement, X1, electrical rules, and later
-optional features. The reference photos below remain in their existing places.
+5. Read [release verification](docs/RELEASE_VERIFICATION.md) to understand what
+   that checksum can and cannot prove.
+6. Follow [flashing and recovery](docs/FLASHING.md) one board at a time.
+7. Install 1541HUD and/or the C64 configurator after firmware validation.
 
 ## Optional control wiring
 
@@ -64,15 +64,13 @@ transistor circuit when write-protect override is not wanted. X1 is separate:
 it is required whenever UB3 must serve both halves of the 1541 ROM address
 range.
 
-## Reference photos: paired UB3 + UB4 installation
+## Installation photos
 
-These photographs belong to the **later, paired UB3 + UB4** installation, not
-the single-UB3 first-time path. Refer to them when adding UB4 or optional
-features after the Quick Start baseline is working. They are reference examples,
-not a substitute for the pinout and electrical rules in the
-[wiring guide](docs/WIRING_AND_INSTALLATION.md). In particular, the IC test
-clips are temporary validation tools; do not treat their placement or wire
-colours as a universal 1541 wiring standard.
+These photographs show the hardware-qualified development/test installation.
+They are reference examples, not a substitute for the pinout and electrical
+rules in the [wiring guide](docs/WIRING_AND_INSTALLATION.md). In particular,
+the IC test clips are temporary validation tools; do not treat their placement
+or wire colours as a universal 1541 wiring standard.
 
 | Paired OneROM installation | Temporary IEC-selector verification |
 | --- | --- |
@@ -86,17 +84,38 @@ colours as a universal 1541 wiring standard.
 
 ## Components
 
-- `firmware-monitor/` contains the hardware-tested UB4 V0.8.0.08 passive
-  Monitor `.bin` and BOOTSEL `.uf2` images and their checksums. It is
-  upper-socket-only and must be paired with a compatible UB3 Control
-  installation.
+- `firmware-monitor/` contains the complete UB4 V0.8.0.14 passive Monitor
+  image and its checksum. It is upper-socket-only and must be paired with a
+  compatible UB3 Control installation.
 - `firmware-control/` contains the UB3 custom-composition kit: patched V8
   base, compiled plugins, bootloader, verified CLI, and no-JiffyDOS example
   manifests.
 - `c64-onerom-configurator/` contains the V0.8.0.01 C64 `.PRG` and `.d64`
   release files.
-- `1541hud/` contains the portable Windows V0.8.0.13 application and its
+- `1541hud/` contains the portable Windows V0.8.0.14 application and its
   checksum.
+
+## V0.8.0.14 RPM measurement
+
+V0.8.0.14 adds passive, live RPM measurement while normal disk software is
+running. It does not write a test sector, require a test disk, or add a spindle
+sensor. After the Monitor sees a checksum-valid physical header, it uses that
+header only to establish the standard density-zone geometry. It then timestamps
+raw SYNC marks over two complete disk revolutions to calculate RPM.
+
+The timer does not wait for the same header or sector to return. Standard 1541
+geometry supplies the revolution boundary: 42, 38, 36, or 34 SYNC marks per
+revolution for density zones 3 through 0 respectively. The measured RPM also
+feeds the HUD's expected-SYNC, SYNC-per-revolution, density-validation, and
+card-detail calculations.
+
+During a seek or unreadable interval, V14 retains the last confirmed RPM rather
+than showing an incomplete sample. When the motor stops, the RPM card shows
+`--.--`. The method is intended for standard readable GCR tracks, including
+many commercial disks with protection elsewhere. Deliberately nonstandard or
+unreadable protection tracks may not produce enough valid evidence; the HUD
+will hold the last confirmed value or report RPM as unavailable rather than
+inventing a number.
 
 ## 1541HUD V0.8.0.13 screenshots
 

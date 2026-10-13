@@ -36,6 +36,18 @@ current working directory.
 Create `firmware-control/output` before running the command if the CLI does
 not create it on the installed version.
 
+### ROM-input integrity boundary
+
+The default example manifests download Original DOS ROM files from the approved
+Zimmers URLs recorded in [`ROM_SOURCES.md`](ROM_SOURCES.md). This keeps the
+ordinary build path convenient, but those live URLs are not immutable build
+inputs. For an offline/reproducible build, download the files, verify their
+SHA-256 values in `ROM_SOURCES.md`, and use a private local copy of the
+manifest with `firmware-control/rom-inputs/` paths. Keep those local inputs out
+of version control.
+A custom image is not release-qualified until its exact input provenance and
+hardware result have been recorded.
+
 The lower example is the relevant one for UB3 in the standard 1541HUD setup.
 The upper example is supplied for custom hardware layouts; do not use it for
 the normal UB3/UB4 arrangement.
@@ -51,6 +63,6 @@ Verify every distributed input against [SHA256SUMS.txt](SHA256SUMS.txt) before
 composition. The final composed image is custom-user output and must be tested
 before flashing hardware.
 
-For the prebuilt Original-ROM-only Control release and the BOOTSEL flashing flow, see
+For the prebuilt Original-ROM-only candidate and the BOOTSEL flashing flow, see
 [`../docs/FLASHING.md`](../docs/FLASHING.md). Hardware and USB sequencing are
 defined in [`../docs/WIRING_AND_INSTALLATION.md`](../docs/WIRING_AND_INSTALLATION.md).

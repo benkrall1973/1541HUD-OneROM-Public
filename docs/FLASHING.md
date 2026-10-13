@@ -8,16 +8,16 @@ USB serial; a remembered COM number is not board identity.
 
 Use the supplied raw `.bin` files only with OneROM CLI's `program` command.
 Do not drag a `.bin` onto a BOOTSEL mass-storage volume or rename it to `.uf2`.
+The supplied UB3 `.uf2` is the only image intended for BOOTSEL drag-and-drop.
 
 ## Flash UB3 Control
 
-The bundled `firmware-control/releases/` image is the hardware-tested
-Original-ROM-only Control assembly for the documented Fire-24E lower-socket
-role. It is not validated for different board models, socket roles, or 1541
-board/mechanism variants.
+The bundled `firmware-control/releases/` image is an Original-ROM-only
+composition candidate. It must be hardware-qualified for the recipient's
+installation before being treated as a release baseline.
 
 1. Disconnect UB4 USB and power down the 1541 where practical.
-2. Put UB3 into BOOTSEL mode and connect it to the computer.
+2. Start UB3 in its normal USB firmware mode and connect it to the computer.
 3. From repository root, verify the image hash in `SHA256SUMS.txt`.
 4. Program and verify:
 
@@ -28,28 +28,41 @@ board/mechanism variants.
    ```
 
 5. Reconnect normally. Confirm ROM listing, a valid ROM/IEC save, and a
-   cold-reboot readback. During that reboot, UB3 must receive no USB 5 V/VBUS:
-   unplug it, use a data-only cable, or use a dedicated cable with only its
-   red 5 V conductor interrupted.
+   cold-reboot readback.
+
+### UB3 BOOTSEL alternative
+
+With UB3 intentionally in BOOTSEL mode, verify and copy
+`firmware-control/releases/onerom-1541HUD-Control-Lower-v0.8.0.17-original-only-fire-24-e-rp2350.uf2`
+to its RP2350 mass-storage volume. The UF2 contains the same Original-ROM-only
+image as the CLI BIN. It is for **UB3 lower-socket Control only**, not UB4.
 
 To create a custom Control image, follow `firmware-control/README.md` and use
 only ROMs you are authorized to use.
 
 ## Flash UB4 Monitor
 
-1. Put UB4 into BOOTSEL mode; UB3 is not the target.
+1. Start UB4 in its normal USB firmware mode; UB3 is not the target.
 2. Verify the Monitor image hash.
 3. From repository root, program and verify:
 
    ```powershell
    .\firmware-control\onerom-cli\onerom-v0.5.0.exe program `
-     --firmware .\firmware-monitor\onerom-1541HUD-Monitor-Upper-v0.8.0.08-fire-24-e-rp2350.bin `
+    --firmware .\firmware-monitor\onerom-1541HUD-Monitor-Upper-v0.8.0.14-fire-24-e-rp2350.bin `
      --verify --scan-slots
    ```
 
 4. Install UB4 in the upper socket and connect USB. The red LED must remain
    off and the motor must not run merely because USB is present.
 5. Connect 1541HUD and verify live telemetry during real drive activity.
+
+### UB4 BOOTSEL alternative
+
+With UB4 intentionally in BOOTSEL mode, verify and copy
+`firmware-monitor/onerom-1541HUD-Monitor-Upper-v0.8.0.14-fire-24-e-rp2350.uf2`
+to its RP2350 mass-storage volume. The UF2 contains the same V0.8.0.14 passive
+Monitor image as the CLI BIN. It is for **UB4 upper-socket Monitor only**, not
+UB3.
 
 ## Recovery
 

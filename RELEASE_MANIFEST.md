@@ -4,9 +4,9 @@
 
 | Component | Version | Target | Status | Artifact |
 | --- | --- | --- | --- | --- |
-| UB3 Control | V0.8.0.17 | Fire-24E; lower socket | hardware-tested paired Control assembly | `firmware-control/releases/onerom-1541HUD-Control-Lower-v0.8.0.17-original-only-fire-24-e-rp2350.bin` |
-| UB4 Monitor | V0.8.0.08 | Fire-24E; upper socket | hardware-tested paired Monitor assembly | `firmware-monitor/onerom-1541HUD-Monitor-Upper-v0.8.0.08-fire-24-e-rp2350.bin` and `.uf2` |
-| Windows 1541HUD | V0.8.0.13 | Windows x64 | tested portable application | `1541hud/1541HUD-V0.8.0.13-win-x64.exe` |
+| UB3 Control | V0.8.0.17 | Fire-24E; lower socket | Original-ROM-only candidate; composition inspected; BIN for CLI and UF2 for BOOTSEL | `firmware-control/releases/onerom-1541HUD-Control-Lower-v0.8.0.17-original-only-fire-24-e-rp2350.bin` and `.uf2` |
+| UB4 Monitor | V0.8.0.14 | Fire-24E; upper socket | hardware-tested paired Monitor assembly with timed raw-SYNC RPM; BIN for CLI and UF2 for BOOTSEL | `firmware-monitor/onerom-1541HUD-Monitor-Upper-v0.8.0.14-fire-24-e-rp2350.bin` and `.uf2` |
+| Windows 1541HUD | V0.8.0.14 | Windows x64 | tested portable application with V14 timing cards and RPM display | `1541hud/1541HUD-V0.8.0.14-win-x64.exe` |
 | C64 configurator | V0.8.0.01 | Commodore 64 | release artifact | `c64-onerom-configurator/C64-OneROM-Configurator-V0.8.0.01.PRG` and `.d64` |
 
 The V0.8 system is a paired release: UB3 is lower-socket active Control and
@@ -30,6 +30,19 @@ Get-FileHash -Algorithm SHA256 .\path\to\artifact
 Compare the displayed hash with the exact path in `SHA256SUMS.txt`. A checksum
 proves file identity, not that a file is appropriate for the board/socket in
 front of you.
+
+### Authentication status
+
+The current V0.8 public-beta package has no signed Git tag, detached checksum
+signature, release attestation, or reproducible public build. Its manifests
+therefore provide accidental-corruption detection only; they do not establish
+publisher authenticity. The bundled OneROM CLI is Authenticode-signed by its
+publisher, but the 1541HUD executables are not Authenticode-signed.
+
+Treat this package as an evaluation snapshot. A promoted release must be
+published as a GitHub Release from a signed, protected tag and include a
+detached signature for its checksum manifest. See
+[`docs/RELEASE_VERIFICATION.md`](docs/RELEASE_VERIFICATION.md).
 
 ## Release boundaries
 

@@ -1,0 +1,17 @@
+name: Release verification
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - v8.0
+
+jobs:
+  verify:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify package integrity and manifest policy
+        shell: pwsh
+        run: ./tools/verify-release.ps1
