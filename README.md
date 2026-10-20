@@ -1,6 +1,6 @@
 # 1541HUD OneROM — Public Releases
 
-## A project for the venerable 1541—if it trips your trigger
+## 1541HUD — Giving the Commodore 1541 a Modern Control Panel
 
 1541HUD is a OneROM community project for Commodore 1541 owners who want easier
 ROM switching, USB control, and optional live drive-status monitoring. Begin
