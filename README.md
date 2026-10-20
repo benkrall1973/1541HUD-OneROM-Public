@@ -1,47 +1,28 @@
 # 1541HUD OneROM — Public Releases
 
-1541HUD is a OneROM community project for Commodore 1541 owners who want easier ROM switching, USB control, and optional live drive-status monitoring. Start with a Windows interface, or use the C64 configuration tool as soon as you install one compatible UB3 OneROM board with your original drive ROM. Then migrate to a small Raspberry Pi touchscreen interface that sits on the drive. Add features as you go, including multiple ROMs, programmable drive addresses, write-protect control, and live telemetry such as motor activity, full- and half-track position, stepping activity, write status, disk density, headers, RPM, and SYNC activity. Firmware, setup guides, and testing notes are available on GitHub for builders and testers.
+## A project for the venerable 1541—if it trips your trigger
 
-This repository is the public distribution point for 1541HUD OneROM releases.
-It intentionally contains distributable artifacts and user documentation, not
-the private development tree. Each artifact has a stated qualification level;
-do not treat every file as universally hardware-validated merely because it is
-in a repository. That would be a spectacularly efficient way to confuse a
-checksum with an engineering result.
+1541HUD is a OneROM community project for Commodore 1541 owners who want easier
+ROM switching, USB control, and optional live drive-status monitoring. Begin
+with the Windows interface, or configure your drive from the C64 after
+installing one compatible UB3 OneROM board alongside your original drive ROM.
+When you are ready, move to a compact Raspberry Pi touchscreen display mounted
+on the drive.
 
-## Release status and trust boundary
+Add capabilities at your own pace: multiple ROMs, programmable drive addresses,
+write-protect control, and live telemetry for motor activity, full- and
+half-track position, stepping, write status, disk density, headers, RPM, and
+SYNC activity. The project also leaves room for many more community-developed
+features, tools, displays, and integrations as ideas and hardware evolve.
 
-This is a **public beta package**, not an immutable signed release.
-The included SHA-256 manifests verify that a downloaded file matches the file
-recorded in this repository revision; they do **not** authenticate the publisher
-or prove that a mutable branch has not changed. This package includes
-unsigned 1541HUD Windows executables and firmware artifacts.
+### Recommended board for new builds
 
-Use the package only for evaluation on hardware you are prepared to recover.
-For a promoted release, obtain the artifact from a GitHub Release whose
-protected tag and checksum manifest are signed, then follow
-[release verification](docs/RELEASE_VERIFICATION.md). Until that exists, do
-not treat it as a production distribution channel.
+The **24 RGB Upright USB-C** is the recommended OneROM version to purchase for
+new 1541HUD builds. Its upright USB-C connector makes the data cable much easier
+to reach and connect after the board is installed in the drive.
 
-## What belongs here
-
-- an UB3 Control composition candidate and a hardware-tested UB4 Monitor image;
-- the Windows 1541HUD application release;
-- C64 configurator release files;
-- checksums, wiring, flashing, and installation documentation; and
-- safe configuration examples that do not include private ROM files.
-
-## What does not belong here
-
-- private ROM inputs or licensed ROM images without redistribution rights;
-- firmware source snapshots, private build environments, diagnostics, or
-  experimental candidates; and
-- internal patch-development notes.
-
-This public-beta package is still being prepared for a promoted release. The
-UB3 Control artifact is a candidate; do not treat it as flash-ready until it
-has been hardware-qualified for the recipient installation. UB4 is limited to
-the documented paired evaluation configuration and its wiring prerequisites.
+Firmware, setup guides, and testing notes are available on GitHub for builders
+and testers.
 
 ## Start here
 
@@ -57,6 +38,49 @@ the documented paired evaluation configuration and its wiring prerequisites.
 7. Check the [support and qualification matrix](docs/SUPPORT_MATRIX.md) and
    the [FAQ](docs/FAQ.md) before choosing an artifact.
 8. Install 1541HUD and/or the C64 configurator after firmware validation.
+
+## About this public beta repository
+
+This repository is the public distribution point for 1541HUD OneROM releases.
+It intentionally contains distributable artifacts and user documentation, not
+the private development tree. Each artifact has a stated qualification level;
+do not treat every file as universally hardware-validated merely because it is
+in a repository. That would be a spectacularly efficient way to confuse a
+checksum with an engineering result.
+
+### Release status and trust boundary
+
+This is a **public beta package**, not an immutable signed release.
+The included SHA-256 manifests verify that a downloaded file matches the file
+recorded in this repository revision; they do **not** authenticate the publisher
+or prove that a mutable branch has not changed. This package includes
+unsigned 1541HUD Windows executables and firmware artifacts.
+
+Use the package only for evaluation on hardware you are prepared to recover.
+For a promoted release, obtain the artifact from a GitHub Release whose
+protected tag and checksum manifest are signed, then follow
+[release verification](docs/RELEASE_VERIFICATION.md). Until that exists, do
+not treat it as a production distribution channel.
+
+### What belongs here
+
+- an UB3 Control composition candidate and a hardware-tested UB4 Monitor image;
+- the Windows 1541HUD application release;
+- C64 configurator release files;
+- checksums, wiring, flashing, and installation documentation; and
+- safe configuration examples that do not include private ROM files.
+
+### What does not belong here
+
+- private ROM inputs or licensed ROM images without redistribution rights;
+- firmware source snapshots, private build environments, diagnostics, or
+  experimental candidates; and
+- internal patch-development notes.
+
+This public-beta package is still being prepared for a promoted release. The
+UB3 Control artifact is a candidate; do not treat it as flash-ready until it
+has been hardware-qualified for the recipient installation. UB4 is limited to
+the documented paired evaluation configuration and its wiring prerequisites.
 
 ## Optional control wiring
 
