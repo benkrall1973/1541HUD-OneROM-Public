@@ -82,6 +82,43 @@ UB3 Control artifact is a candidate; do not treat it as flash-ready until it
 has been hardware-qualified for the recipient installation. UB4 is limited to
 the documented paired evaluation configuration and its wiring prerequisites.
 
+## In development for the next public release
+
+The following work has been added in the private engineering branch and is
+being prepared for a later public release. It is included here as a preview of
+the direction of the project, **not** as a replacement for the released files
+or their qualification notes above.
+
+- A consolidated UB3 Control build supports a bootloader plus eight selectable
+  ROM profiles. It can serve ordinary two-page 1541 ROM sets and optional
+  three-page sets using the `$A000`, `$C000`, and `$E000` address pages.
+- An optional 74LS138 page decoder gives a long-board installation independent
+  `$A000` and `$E000` page selects, making three-page firmware such as
+  DolphinDOS-style layouts practical without reusing an unsafe mirrored socket
+  select.
+- The optional reset-equipped profile uses `SEL_B` to pulse the original
+  1541 C46/CR7 reset circuit. This allows a saved ROM or IEC change to take
+  effect without a drive power cycle. Because that pin becomes reset control,
+  this profile intentionally supports IEC device 8 or 9 only.
+- The next HUD profile system also supports simpler installations: a two-ROM
+  / four-address profile and a three-ROM / four-address profile retain IEC
+  devices 8 through 11 when `SEL_B` remains available as the second address
+  input. The selected software profile must always match the actual wiring.
+- Write-protect control is being expanded so UB3 Control can both override
+  protection and read the physical disk-notch state directly. `SEL_C` drives
+  the optional transistor override, while `SEL_D` observes the same sensor
+  node through a safe resistor divider. This status feature does not require
+  the separate UB4 Monitor board.
+- The updated Windows HUD adds hardware-profile selection, dynamic ROM lists,
+  physical write-protect status, and separate **Apply** versus **Apply + Save**
+  choices for ROM and IEC changes. The Monitor remains optional for live drive
+  telemetry such as RPM, track/head activity, SYNC, and write activity.
+
+Private or licensed ROM files will not be published in this repository. Future
+public packages will continue to provide safe manifests, documentation, and
+user-supplied-ROM guidance rather than redistributing material that does not
+belong here.
+
 ## Optional control wiring
 
 The UB3 ROM/USB Control function does **not** require the programmable IEC
